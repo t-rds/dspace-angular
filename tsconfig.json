@@ -40,7 +40,10 @@
       "node",
       "jasmine"
     ],
-    "useDefineForClassFields": false
+    "useDefineForClassFields": false,
+    "paths": {
+      "@app/*": ["./src/app/*"]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

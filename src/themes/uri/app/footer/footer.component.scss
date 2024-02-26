@@ -1,0 +1,30 @@
+footer {
+  background-color: $blue;
+  color: #fff;
+
+  i {
+    color: #fff;
+    font-size: 35px;
+  }
+
+  .bottom-footer {
+    ul {
+      li {
+        display: inline-flex;
+
+        a {
+          padding: 0 calc(var(--bs-spacer) / 2);
+          color: inherit
+        }
+
+        &:not(:last-child) {
+          &:after {
+            content: '';
+            border-right: 1px var(--bs-secondary) solid;
+          }
+
+        }
+      }
+    }
+  }
+}

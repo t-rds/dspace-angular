@@ -32,9 +32,9 @@
             </ds-truncatable-part>
           </span>
 
-          <ds-truncatable-part [id]="item.id" [minLines]="1" class="item-list-abstract">
-            <span [ngClass]="{'text-muted': !item.firstMetadataValue('dc.description.abstract')}"
-              [innerHTML]="(item.firstMetadataValue('dc.description.abstract')) || ('mydspace.results.no-abstract' | translate)"></span>
+          <ds-truncatable-part [id]="item.id" [minLines]="2" class="item-list-abstract">
+            <span [ngClass]="{'text-muted': !item.firstMetadataValue('dc.description.resumo')}"
+              [innerHTML]="(item.firstMetadataValue('dc.description.resumo')) || ('mydspace.results.no-abstract' | translate)"></span>
           </ds-truncatable-part>
 
         </div>
