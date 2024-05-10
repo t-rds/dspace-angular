@@ -1,0 +1,66 @@
+<ds-results-back-button *ngIf="showBackButton$ | async" [back]="back" />
+
+<div class="row" *ngIf="iiifEnabled">
+  <div class="col-12">
+    <ds-mirador-viewer id="iiif-viewer" [object]="object" [searchable]="iiifSearchEnabled" [query]="iiifQuery$ | async" />
+  </div>
+</div>
+
+<div class="d-flex flex-row">
+  <ds-item-page-title-field [item]="object" class="mr-auto" />
+  <ds-dso-edit-menu />
+</div>
+
+<div class="row py-2">
+  <div class="col-xs-12 col-md-4">
+    <ng-container *ngIf="!(mediaViewer.image || mediaViewer.video)">
+      <ds-metadata-field-wrapper [hideIfNoTextContent]="false">
+        <ds-thumbnail [thumbnail]="object?.thumbnail | async" />
+      </ds-metadata-field-wrapper>
+    </ng-container>
+    <div *ngIf="mediaViewer.image || mediaViewer.video" class="mb-2">
+      <ds-media-viewer [item]="object" />
+    </div>
+
+    <ds-item-page-file-section [item]="object" />
+    <ds-metadata-representation-list class="ds-item-page-mixed-author-field" [parentItem]="object" [itemType]="'Person'"
+      [metadataFields]="['dc.contributor.author', 'dc.creator']" [label]="'relationships.isAuthorOf' | translate" />
+    <ds-metadata-representation-list class="ds-item-page-mixed-author-field" [parentItem]="object" [itemType]="'Advisor'"
+      [metadataFields]="['dc.contributor.advisor', 'dc.contributor.advisorco']" [label]="'relationships.isAuthorOf.Advisor' | translate" />
+    <ds-generic-item-page-field [item]="object" [fields]="['journal.title']" [label]="'item.page.journal-title'" />
+    <ds-generic-item-page-field [item]="object" [fields]="['journal.identifier.issn']" [label]="'item.page.journal-issn'" />
+    <ds-generic-item-page-field [item]="object" [fields]="['journalvolume.identifier.name']" [label]="'item.page.volume-title'" />
+    <ds-generic-item-page-field [item]="object" [fields]="['dc.publisher']" [label]="'item.page.publisher'" />
+    <ds-item-page-date-field [item]="object" />
+  </div>
+
+  <div class="col-xs-12 col-md-8">
+    <ds-truncatable [id]="object.firstMetadataValue('dc.title')" *ngIf="object !== undefined && object !== null">
+      <ds-truncatable-part [id]="object.firstMetadataValue('dc.description.resumo')" [minLines]="5" *ngIf="object.firstMetadataValue('dc.description.resumo')">
+        <ds-generic-item-page-field [item]="object" [fields]="['dc.description.resumo']" [label]="'item.page.resumo'" />
+      </ds-truncatable-part>
+
+      <ds-truncatable-part [id]="object.firstMetadataValue('dc.description')" [minLines]="5" *ngIf="object.firstMetadataValue('dc.description')">
+        <ds-generic-item-page-field [item]="object" [fields]="['dc.description']" [label]="'item.page.resumo'" />
+      </ds-truncatable-part>
+
+      <ds-truncatable-part [id]="object.firstMetadataValue('dc.description.abstract')" [minLines]="5" *ngIf="object.firstMetadataValue('dc.description.abstract')">
+        <ds-item-page-abstract-field *ngIf="object.firstMetadataValue('dc.description.abstract')" [item]="object" />
+      </ds-truncatable-part>
+
+      <ds-generic-item-page-field [item]="object" [fields]="['dc.subject']" [separator]="', '" [label]="'item.page.subject'" />
+      <ds-generic-item-page-field [item]="object" [fields]="['dc.degree.grantor']" [label]="'item.page.degree.grantor'" />
+      <ds-generic-item-page-field [item]="object" [fields]="['dc.degree.program']" [label]="'item.page.degree.program'" />
+      <ds-generic-item-page-field [item]="object" [fields]="['dc.degree.department']" [label]="'item.page.degree.department'" />
+      <ds-generic-item-page-field [item]="object" [fields]="['dc.identifier.citation']" [label]="'item.page.citation'" />
+      <ds-item-page-uri-field [item]="object" [fields]="['dc.identifier.uri']" [label]="'item.page.uri'" />
+      <ds-item-page-collections [item]="object" />
+    </ds-truncatable>
+
+    <div>
+      <a class="btn btn-outline-primary" [routerLink]="[itemPageRoute + '/full']" role="button">
+        <i class="fas fa-info-circle"></i> {{"item.page.link.full" | translate}}
+      </a>
+    </div>
+  </div>
+</div>
