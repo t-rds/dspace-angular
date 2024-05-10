@@ -10270,4 +10270,10 @@
   // "search.filters.filter.notifyEndorsement.label": "Search Notify Endorsement",
   "search.filters.filter.notifyEndorsement.label": "Pesquisar Notificação de Avaliação",
 
+  // "item.page.cc.license.title": "Creative Commons license",
+  "item.page.cc.license.title": "Licença Creative Commons",
+
+  // "item.page.cc.license.disclaimer": "Except where otherwised noted, this item's license is described as",
+  "item.page.cc.license.disclaimer": "Exceto quando indicado de outra forma, a licença deste item é descrita como",
+
 }
