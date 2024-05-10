@@ -1007,11 +1007,6 @@
   // "admin.reports.commons.filters.property.is_not_discoverable": "Not Discoverable - Private Item",
   "admin.reports.commons.filters.property.is_not_discoverable": "Não Descobrível - Item Privado",
 
-  // "admin.reports.commons.filters.property.all_filters.tooltip": "This filter includes all items that matched ALL specified filters",
-  // TODO New key - Add a translation
-  // this key is not present on en.json5 file
-  "admin.reports.commons.filters.property.all_filters.tooltip": "Este filtro inclui todos os itens que correspondem a TODOS os filtros especificados",
-
   // "admin.reports.commons.filters.bitstream": "Basic Bitstream Filters",
   "admin.reports.commons.filters.bitstream": "Filtros básicos de Bitstream",
 
@@ -5179,11 +5174,6 @@
   // "mydspace.upload.upload-multiple-successful": "{{qty}} new workspace items created.",
   "mydspace.upload.upload-multiple-successful": "{{qty}} novo(s) item(ns) de espaço de trabalho criados.",
 
-  // "mydspace.upload.upload-successful": "New workspace item created. Click {{here}} for edit it.",
-  // TODO New key - Add a translation
-    // this key is not present on en.json5 file
-  "mydspace.upload.upload-successful": "Novo item de espaço de trabalho criado. Clique {{here}} para o editar.",
-
   // "mydspace.view-btn": "View",
   "mydspace.view-btn": "Ver",
 
@@ -5334,8 +5324,8 @@
   // "quality-assurance.event.action.ignore": "Ignore suggestion",
   "quality-assurance.event.action.ignore": "Ignorar sugestão",
 
-  // "quality-assurance.event.action.undo": "DELETE",
-  "quality-assurance.event.action.undo": "DESFAZER",
+  // "quality-assurance.event.action.undo": "Delete",
+  "quality-assurance.event.action.undo": "Desfazer",
 
   // "quality-assurance.event.action.reject": "Reject suggestion",
   "quality-assurance.event.action.reject": "Rejeitar sugestão",
@@ -7302,11 +7292,6 @@
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.isProjectOfPublication.title": "Project",
   "submission.sections.describe.relationship-lookup.external-source.import-modal.isProjectOfPublication.title": "Projeto",
 
-  // "submission.sections.describe.relationship-lookup.external-source.import-modal.head.openAIREFunding": "Funding OpenAIRE API",
-  // TODO New key - Add a translation
-  // this key is not present on en.json5 file
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.openAIREFunding": "Financiamento API OpenAIRE API",
-
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.isAuthorOfPublication.title": "Import Remote Author",
   "submission.sections.describe.relationship-lookup.external-source.import-modal.isAuthorOfPublication.title": "Importar Autor Remoto",
 
@@ -7520,11 +7505,6 @@
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.isChildOrgUnitOf": "Search for Organizational Units",
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.isChildOrgUnitOf": "Procure por Unidade Organizacional",
 
-  // "submission.sections.describe.relationship-lookup.search-tab.tab-title.openAIREFunding": "Funding OpenAIRE API",
-  // TODO New key - Add a translation
-  // this key is not present on en.json5 file
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.openAIREFunding": "Financiamento da API OpenAIRE",
-
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.isProjectOfPublication": "Projects",
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.isProjectOfPublication": "Projetos",
 
@@ -7536,11 +7516,6 @@
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.isOrgUnitOfProject": "OrgUnit of the Project",
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.isOrgUnitOfProject": "OrgUnit do Projeto",
-
-  // "submission.sections.describe.relationship-lookup.selection-tab.title.openAIREFunding": "Funding OpenAIRE API",
-  // TODO New key - Add a translation
-  // this key is not present on en.json5 file
-  "submission.sections.describe.relationship-lookup.selection-tab.title.openAIREFunding": "Financiamento da API OpenAIRE",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.isProjectOfPublication": "Project",
   "submission.sections.describe.relationship-lookup.selection-tab.title.isProjectOfPublication": "Projeto",
