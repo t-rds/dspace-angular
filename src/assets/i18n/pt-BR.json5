@@ -6372,9 +6372,8 @@
   // "resource-policies.form.name.label": "Name",
   "resource-policies.form.name.label": "Nome",
 
-  //"resource-policies.form.name.hint": "Max 30 characters",
-  // TODO New key - Add a translation
-  "resource-policies.form.name.hint": "Max 30 characters",
+  // "resource-policies.form.name.hint": "Max 30 characters",
+  "resource-policies.form.name.hint": "Máximo de 30 caracteres",
 
   // "resource-policies.form.policy-type.label": "Select the policy type",
   "resource-policies.form.policy-type.label": "Selecione o tipo de política",
@@ -10269,11 +10268,5 @@
 
   // "search.filters.filter.notifyEndorsement.label": "Search Notify Endorsement",
   "search.filters.filter.notifyEndorsement.label": "Pesquisar Notificação de Avaliação",
-
-  // "item.page.cc.license.title": "Creative Commons license",
-  "item.page.cc.license.title": "Licença Creative Commons",
-
-  // "item.page.cc.license.disclaimer": "Except where otherwised noted, this item's license is described as",
-  "item.page.cc.license.disclaimer": "Exceto quando indicado de outra forma, a licença deste item é descrita como",
 
 }
