@@ -17,7 +17,7 @@ import { PrivacyComponent } from './app/info/privacy/privacy.component';
 import { UntypedItemComponent } from './app/item-page/simple/item-types/untyped-item/untyped-item.component';
 import { LoginPageComponent } from './app/login-page/login-page.component';
 import { LogoutPageComponent } from './app/logout-page/logout-page.component';
-import { ComcolPageBrowseByComponent } from './app/shared/comcol-page-browse-by/comcol-page-browse-by.component';
+import { ComcolPageBrowseByComponent } from './app/shared/comcol/comcol-page-browse-by/comcol-page-browse-by.component';
 import { FileDownloadLinkComponent } from './app/shared/file-download-link/file-download-link.component';
 
 const DECLARATIONS = [
