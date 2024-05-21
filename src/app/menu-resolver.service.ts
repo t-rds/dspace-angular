@@ -42,6 +42,7 @@ import { ExportMetadataSelectorComponent } from './shared/dso-selector/modal-wra
 import { hasValue } from './shared/empty.util';
 import { MenuService } from './shared/menu/menu.service';
 import { MenuID } from './shared/menu/menu-id.model';
+import { ExternalLinkMenuItemModel } from './shared/menu/menu-item/models/external-link.model';
 import { LinkMenuItemModel } from './shared/menu/menu-item/models/link.model';
 import { OnClickMenuItemModel } from './shared/menu/menu-item/models/onclick.model';
 import { TextMenuItemModel } from './shared/menu/menu-item/models/text.model';
@@ -97,9 +98,9 @@ export class MenuResolverService  {
       /* Communities & Collections tree */
       {
         id: `browse_global_communities_and_collections`,
+        parentID: 'browse_global',
         active: false,
         visible: true,
-        index: 0,
         model: {
           type: MenuItemType.LINK,
           text: `menu.section.browse_global_communities_and_collections`,
@@ -131,7 +132,7 @@ export class MenuResolverService  {
               id: 'browse_global',
               active: false,
               visible: true,
-              index: 1,
+              index: 0,
               model: {
                 type: MenuItemType.TEXT,
                 text: 'menu.section.browse_global',
@@ -144,7 +145,46 @@ export class MenuResolverService  {
         })));
       });
 
+    this.createUtilsMenu();
+
     return this.waitForMenu$(MenuID.PUBLIC);
+  }
+
+  /**
+   * Initialize utils menu for {@link MenuID.PUBLIC}
+   */
+  createUtilsMenu() {
+    const menuList: any[] = [
+      {
+        id: 'authorization_term',
+        parentID: 'documents',
+        active: false,
+        visible: true,
+        model: {
+          type: MenuItemType.EXTERNAL,
+          text: 'menu.section.authorization_term',
+          href: '/assets/uri/uploads/termo_autorizacao.pdf',
+        } as ExternalLinkMenuItemModel,
+      },
+    ];
+
+    menuList.push(
+      /* Browse */
+      {
+        id: 'documents',
+        active: false,
+        visible: true,
+        index: 1,
+        model: {
+          type: MenuItemType.TEXT,
+          text: 'menu.section.documents',
+        } as TextMenuItemModel,
+      },
+    );
+
+    menuList.forEach((menuSection) => this.menuService.addSection(MenuID.PUBLIC, Object.assign(menuSection, {
+      shouldPersistOnRouteChange: true,
+    })));
   }
 
   /**
