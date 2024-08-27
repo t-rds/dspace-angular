@@ -1,0 +1,25 @@
+:host {
+  .list-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .list-grid-item {
+    border: 1px solid var(--ds-comcol-border-color);
+    border-radius: var(--bs-border-radius);
+    text-decoration: none;
+    text-align: center;
+
+    transition: all 200ms;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .list-grid-item:hover, .list-grid-item.active {
+    background-color: var(--ds-comcol-border-color);
+    color: var(--bs-white);
+  }
+}

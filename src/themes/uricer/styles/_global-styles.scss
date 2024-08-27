@@ -1,0 +1,59 @@
+// Add any global css for the theme here
+
+// imports the base global style
+@import '../../../styles/_global-styles.scss';
+
+.facet-filter, .setting-option {
+  background-color: var(--bs-light);
+  border-radius: var(--bs-border-radius);
+
+  &.p-3 {
+    // Needs !important because the original bootstrap class uses it
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  .badge-secondary {
+    background-color: #{$uri};
+  }
+
+  h4 {
+    font-size: 1.1rem
+  }
+}
+
+.klaro .cookie-notice, .klaro .cookie-modal {
+  .cn-buttons,
+  .cm-footer-buttons {
+    .cm-btn {
+      color: #{$light} !important;
+      padding: 0.5rem 1rem;
+
+      &.cn-decline {
+        background-color: #{$danger};
+      }
+
+      &.cm-btn-success {
+        background-color: #{$uri};
+      }
+
+      &.cm-btn-accept-all {
+        background-color: #{darken($success, 20%)};
+      }
+
+      &:hover {
+        scale: 1.05;
+      }
+    }
+  }
+}
+
+.klaro .cookie-modal a, .klaro .context-notice a, .klaro .cookie-notice a {
+  color: #{lighten($uri, 20%)} !important;
+  transition: all 200ms;
+
+  &:hover {
+    text-decoration: underline;
+    color: #{$uri};
+  }
+}
