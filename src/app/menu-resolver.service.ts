@@ -163,7 +163,7 @@ export class MenuResolverService {
         model: {
           type: MenuItemType.EXTERNAL,
           text: 'menu.section.authorization_term',
-          href: '/assets/uri/uploads/termo_autorizacao.pdf',
+          href: '/assets/uricer/uploads/termo_autorizacao.pdf',
         } as ExternalLinkMenuItemModel,
       },
     ];

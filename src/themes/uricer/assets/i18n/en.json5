@@ -1,38 +1,48 @@
 {
-  "browse.comcol.by.advisor": "By Advisor",
-  "browse.comcol.by.degreeDepartment": "By Department",
-  "browse.comcol.by.degreeProgram": "By Course/Program",
-  "browse.comcol.by.itemtype": "By Type",
-  "browse.metadata.advisor": "By Advisor",
-  "browse.metadata.degreeProgram": "Course/Program",
+  // Metadata
+  "browse.metadata.advisor": "Advisor",
+  "browse.metadata.degreeProgram": "Degree Program",
   "browse.metadata.degreeDepartment": "Department",
   "browse.metadata.itemtype": "Type",
   "browse.metadata.advisor.breadcrumbs": "Advisor",
-  "browse.metadata.degreeProgram.breadcrumbs": "Course/Program",
+  "browse.metadata.degreeProgram.breadcrumbs": "Degree Program",
   "browse.metadata.degreeDepartment.breadcrumbs": "Department",
   "browse.metadata.itemtype.breadcrumbs": "Type",
+
+  // Footer
   "footer.copyright": "© {{ year }} URI Câmpus de Erechim",
+  "home.recent-submissions.head": "Recent Submissions",
   "home.top-level-communities.head": "Communities",
-  "item.page.resumo": "Resumo",
-  "item.page.abstract": "Abstract/Resumen",
+
+  // Item page
+  "item.page.resumo": "Summary",
+  "item.page.abstract": "Abstract",
   "item.page.degree.department": "Department",
   "item.page.degree.grantor": "Institution",
-  "item.page.degree.program": "Course/Program",
-  "menu.section.documents": "Documents",
+  "item.page.degree.program": "Degree Program",
+
+  // Menu
+  "menu.section.documents": "Useful Documents",
   "menu.section.authorization_term": "Authorization Term",
-  "menu.section.browse_global": "Browse All Repository,
+  "menu.section.browse_global": "Browse Repository",
   "menu.section.browse_global_by_advisor": "By Advisor",
-  "menu.section.browse_global_by_degreeProgram": "By Course/Program",
+  "menu.section.browse_global_by_degreeProgram": "By Degree Program",
   "menu.section.browse_global_by_degreeDepartment": "By Department",
   "menu.section.browse_global_by_itemtype": "By Type",
+
+  // Repository title
   "repository.title.suffix": " | Repositório Digital",
+
+  // Relationships
   "relationships.isAuthorOf.Advisor": "Advisors",
-  "search.filters.applied.f.degreeProgram": "Course/Program",
+
+  // Search filters
+  "search.filters.applied.f.degreeProgram": "Degree Program",
   "search.filters.applied.f.degreeDepartment": "Department",
-  "search.filters.filter.degreeProgram.head": "Course/Program",
-  "search.filters.filter.degreeProgram.placeholder": "Course/Program",
-  "search.filters.filter.degreeProgram.label": "Course/Program",
+  "search.filters.filter.degreeProgram.head": "Degree Program",
+  "search.filters.filter.degreeProgram.placeholder": "Degree Program",
+  "search.filters.filter.degreeProgram.label": "Degree Program",
   "search.filters.filter.degreeDepartment.head": "Department",
   "search.filters.filter.degreeDepartment.placeholder": "Department",
-  "search.filters.filter.degreeDepartment.label": "Department",
+  "search.filters.filter.degreeDepartment.label": "Department"
 }
