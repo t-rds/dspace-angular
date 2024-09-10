@@ -16,10 +16,12 @@ import { LoginPageComponent } from './app/login-page/login-page.component';
 import { LogoutPageComponent } from './app/logout-page/logout-page.component';
 import { ComcolPageBrowseByComponent } from './app/shared/comcol/comcol-page-browse-by/comcol-page-browse-by.component';
 import { FileDownloadLinkComponent } from './app/shared/file-download-link/file-download-link.component';
+import { ItemListPreviewComponent } from './app/shared/object-list/my-dspace-result-list-element/item-list-preview/item-list-preview.component';
 
 const DECLARATIONS = [
   ComcolPageBrowseByComponent,
   FileDownloadLinkComponent,
+  ItemListPreviewComponent,
   LoginPageComponent,
   LogoutPageComponent,
 ];
