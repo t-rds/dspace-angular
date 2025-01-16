@@ -1,6 +1,5 @@
 import {
   AsyncPipe,
-  CommonModule,
   NgIf,
 } from '@angular/common';
 import {
@@ -27,8 +26,6 @@ import { DsoEditMenuComponent } from '@app/shared/dso-page/dso-edit-menu/dso-edi
 import { MetadataFieldWrapperComponent } from '@app/shared/metadata-field-wrapper/metadata-field-wrapper.component';
 import { listableObjectComponent } from '@app/shared/object-collection/shared/listable-object/listable-object.decorator';
 import { ThemedResultsBackButtonComponent } from '@app/shared/results-back-button/themed-results-back-button.component';
-import { TruncatableComponent } from '@app/shared/truncatable/truncatable.component';
-import { TruncatablePartComponent } from '@app/shared/truncatable/truncatable-part/truncatable-part.component';
 import { ThemedThumbnailComponent } from '@app/thumbnail/themed-thumbnail.component';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -43,7 +40,6 @@ import { TranslateModule } from '@ngx-translate/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
-    CommonModule,
     ThemedItemPageTitleFieldComponent,
     DsoEditMenuComponent,
     MetadataFieldWrapperComponent,
@@ -60,8 +56,6 @@ import { TranslateModule } from '@ngx-translate/core';
     RouterLink,
     ItemPageUriFieldComponent,
     ItemPageAbstractFieldComponent,
-    TruncatableComponent,
-    TruncatablePartComponent,
     NgIf,
     AsyncPipe,
     ItemPageCcLicenseFieldComponent,

@@ -35,19 +35,9 @@
   </div>
 
   <div class="col-xs-12 col-md-8">
-    <ds-truncatable [id]="object.firstMetadataValue('dc.title')" *ngIf="object !== undefined && object !== null">
-      <ds-truncatable-part [id]="object.firstMetadataValue('dc.description.resumo')" [minLines]="5" *ngIf="object.firstMetadataValue('dc.description.resumo')">
-        <ds-generic-item-page-field [item]="object" [fields]="['dc.description.resumo']" [label]="'item.page.resumo'" />
-      </ds-truncatable-part>
-
-      <ds-truncatable-part [id]="object.firstMetadataValue('dc.description')" [minLines]="5" *ngIf="object.firstMetadataValue('dc.description')">
-        <ds-generic-item-page-field [item]="object" [fields]="['dc.description']" [label]="'item.page.resumo'" />
-      </ds-truncatable-part>
-
-      <ds-truncatable-part [id]="object.firstMetadataValue('dc.description.abstract')" [minLines]="5" *ngIf="object.firstMetadataValue('dc.description.abstract')">
-        <ds-item-page-abstract-field *ngIf="object.firstMetadataValue('dc.description.abstract')" [item]="object" />
-      </ds-truncatable-part>
-
+      <ds-generic-item-page-field [item]="object" [fields]="['dc.description.resumo']" [label]="'item.page.resumo'" />
+      <ds-generic-item-page-field [item]="object" [fields]="['dc.description']" [label]="'item.page.resumo'" />
+      <ds-item-page-abstract-field [item]="object" />
       <ds-generic-item-page-field [item]="object" [fields]="['dc.subject']" [separator]="', '" [label]="'item.page.subject'" />
       <ds-generic-item-page-field [item]="object" [fields]="['dc.degree.grantor']" [label]="'item.page.degree.grantor'" />
       <ds-generic-item-page-field [item]="object" [fields]="['dc.degree.program']" [label]="'item.page.degree.program'" />
@@ -55,7 +45,6 @@
       <ds-generic-item-page-field [item]="object" [fields]="['dc.identifier.citation']" [label]="'item.page.citation'" />
       <ds-item-page-uri-field [item]="object" [fields]="['dc.identifier.uri']" [label]="'item.page.uri'" />
       <ds-item-page-collections [item]="object" />
-    </ds-truncatable>
 
     <div>
       <a class="btn btn-outline-primary" [routerLink]="[itemPageRoute + '/full']" role="button">
