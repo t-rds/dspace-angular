@@ -1,26 +1,11 @@
 {
-  // Navegación
-  "browse.comcol.by.advisor": "Por Asesor",
-  "browse.comcol.by.degreeDepartment": "Por Departamento",
-  "browse.comcol.by.degreeProgram": "Por Carrera/Programa",
-  "browse.comcol.by.itemtype": "Por Tipo",
+  // Título del repositorio
+  "repository.title.suffix": " | Repositório Digital",
 
-  // Metadatos
-  "browse.metadata.advisor": "Asesor",
-  "browse.metadata.degreeProgram": "Carrera/Programa",
-  "browse.metadata.degreeDepartment": "Departamento",
-  "browse.metadata.itemtype": "Tipo",
-  "browse.metadata.advisor.breadcrumbs": "Asesor",
-  "browse.metadata.degreeProgram.breadcrumbs": "Carrera/Programa",
-  "browse.metadata.degreeDepartment.breadcrumbs": "Departamento",
-  "browse.metadata.itemtype.breadcrumbs": "Tipo",
-
-  // Pie de página
-  "footer.copyright": "© {{ year }} URI Câmpus de Erechim",
-
-  // Página principal
+  // App
   "home.recent-submissions.head": "Publicaciones Recientes",
   "home.top-level-communities.head": "Comunidades",
+  "footer.copyright": "© {{ year }} URI Câmpus de Erechim",
 
   // Página del ítem
   "item.page.resumo": "Resumen",
@@ -28,6 +13,9 @@
   "item.page.degree.department": "Departamento",
   "item.page.degree.grantor": "Institución",
   "item.page.degree.program": "Carrera/Programa",
+  "relationships.isAuthorOf.Advisor": "Asesores",
+  "browse.comcol.by.advisor": "Por Asesor",
+  "browse.comcol.by.degreeProgram": "Por Carrera/Programa",
 
   // Menú
   "menu.section.documents": "Documentos útiles",
@@ -35,22 +23,10 @@
   "menu.section.browse_global": "Explorar el Repositorio",
   "menu.section.browse_global_by_advisor": "Por Asesor",
   "menu.section.browse_global_by_degreeProgram": "Por Carrera/Programa",
-  "menu.section.browse_global_by_degreeDepartment": "Por Departamento",
-  "menu.section.browse_global_by_itemtype": "Por Tipo",
 
-  // Título del repositorio
-  "repository.title.suffix": " | Repositório Digital",
-
-  // Relaciones
-  "relationships.isAuthorOf.Advisor": "Asesores",
-
-  // Filtros de búsqueda
-  "search.filters.applied.f.degreeProgram": "Carrera/Programa",
-  "search.filters.applied.f.degreeDepartment": "Departamento",
-  "search.filters.filter.degreeProgram.head": "Carrera/Programa",
-  "search.filters.filter.degreeProgram.placeholder": "Carrera/Programa",
-  "search.filters.filter.degreeProgram.label": "Carrera/Programa",
-  "search.filters.filter.degreeDepartment.head": "Departamento",
-  "search.filters.filter.degreeDepartment.placeholder": "Departamento",
-  "search.filters.filter.degreeDepartment.label": "Departamento",
+  // Metadatos
+  "browse.metadata.advisor": "Asesor",
+  "browse.metadata.degreeProgram": "Carrera/Programa",
+  "browse.metadata.advisor.breadcrumbs": "Asesor",
+  "browse.metadata.degreeProgram.breadcrumbs": "Carrera/Programa",
 }

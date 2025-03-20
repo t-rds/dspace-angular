@@ -1,25 +1,21 @@
 {
-  // Metadata
-  "browse.metadata.advisor": "Advisor",
-  "browse.metadata.degreeProgram": "Degree Program",
-  "browse.metadata.degreeDepartment": "Department",
-  "browse.metadata.itemtype": "Type",
-  "browse.metadata.advisor.breadcrumbs": "Advisor",
-  "browse.metadata.degreeProgram.breadcrumbs": "Degree Program",
-  "browse.metadata.degreeDepartment.breadcrumbs": "Department",
-  "browse.metadata.itemtype.breadcrumbs": "Type",
+  // Repository title
+  "repository.title.suffix": " | Repositório Digital",
 
-  // Footer
-  "footer.copyright": "© {{ year }} URI Câmpus de Erechim",
+  // App
   "home.recent-submissions.head": "Recent Submissions",
   "home.top-level-communities.head": "Communities",
+  "footer.copyright": "© {{ year }} URI Câmpus de Erechim",
 
   // Item page
-  "item.page.resumo": "Summary",
+  "item.page.resumo": "Resumo",
   "item.page.abstract": "Abstract",
   "item.page.degree.department": "Department",
   "item.page.degree.grantor": "Institution",
   "item.page.degree.program": "Degree Program",
+  "relationships.isAuthorOf.Advisor": "Advisors",
+  "browse.comcol.by.advisor": "By Advisor",
+  "browse.comcol.by.degreeProgram": "By Course/Program",
 
   // Menu
   "menu.section.documents": "Useful Documents",
@@ -27,22 +23,10 @@
   "menu.section.browse_global": "Browse Repository",
   "menu.section.browse_global_by_advisor": "By Advisor",
   "menu.section.browse_global_by_degreeProgram": "By Degree Program",
-  "menu.section.browse_global_by_degreeDepartment": "By Department",
-  "menu.section.browse_global_by_itemtype": "By Type",
 
-  // Repository title
-  "repository.title.suffix": " | Repositório Digital",
-
-  // Relationships
-  "relationships.isAuthorOf.Advisor": "Advisors",
-
-  // Search filters
-  "search.filters.applied.f.degreeProgram": "Degree Program",
-  "search.filters.applied.f.degreeDepartment": "Department",
-  "search.filters.filter.degreeProgram.head": "Degree Program",
-  "search.filters.filter.degreeProgram.placeholder": "Degree Program",
-  "search.filters.filter.degreeProgram.label": "Degree Program",
-  "search.filters.filter.degreeDepartment.head": "Department",
-  "search.filters.filter.degreeDepartment.placeholder": "Department",
-  "search.filters.filter.degreeDepartment.label": "Department"
+  // Metadata
+  "browse.metadata.advisor": "Advisor",
+  "browse.metadata.degreeProgram": "Course/Program",
+  "browse.metadata.advisor.breadcrumbs": "Advisor",
+  "browse.metadata.degreeProgram.breadcrumbs": "Course/Program",
 }

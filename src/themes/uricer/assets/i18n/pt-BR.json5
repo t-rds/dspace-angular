@@ -1,39 +1,32 @@
 {
-  "browse.comcol.by.advisor": "Por Orientador",
-  "browse.comcol.by.degreeDepartment": "Por Departamento",
-  "browse.comcol.by.degreeProgram": "Por Curso/Programa",
-  "browse.comcol.by.itemtype": "Por Tipo",
-  "browse.metadata.advisor": "Orientador",
-  "browse.metadata.degreeProgram": "Curso/Programa",
-  "browse.metadata.degreeDepartment": "Departamento",
-  "browse.metadata.itemtype": "Tipo",
-  "browse.metadata.advisor.breadcrumbs": "Orientador",
-  "browse.metadata.degreeProgram.breadcrumbs": "Curso/Programa",
-  "browse.metadata.degreeDepartment.breadcrumbs": "Departamento",
-  "browse.metadata.itemtype.breadcrumbs": "Tipo",
-  "footer.copyright": "© {{ year }} URI Câmpus de Erechim",
+  // Título do Repositório
+  "repository.title.suffix": " | Repositório Digital",
+
+  // App
   "home.recent-submissions.head": "Publicações Recentes",
   "home.top-level-communities.head": "Comunidades",
+  "footer.copyright": "© {{ year }} URI Câmpus de Erechim",
+
+  // Página
   "item.page.resumo": "Resumo",
   "item.page.abstract": "Abstract/Resumen",
   "item.page.degree.department": "Departamento",
   "item.page.degree.grantor": "Instituição",
   "item.page.degree.program": "Curso/Programa",
-  "menu.section.documents": "Documentos úteis",
-  "menu.section.authorization_term": "Termo de Autorização",
+  "relationships.isAuthorOf.Advisor": "Orientadores",
+  "browse.comcol.by.advisor": "Por Orientador",
+  "browse.comcol.by.degreeProgram": "Por Curso/Programa",
+
+  // Menu
   "menu.section.browse_global": "Navegar no Repositório",
   "menu.section.browse_global_by_advisor": "Por Orientador",
   "menu.section.browse_global_by_degreeProgram": "Por Curso/Programa",
-  "menu.section.browse_global_by_degreeDepartment": "Por Departamento",
-  "menu.section.browse_global_by_itemtype": "Por Tipo",
-  "repository.title.suffix": " | Repositório Digital",
-  "relationships.isAuthorOf.Advisor": "Orientadores",
-  "search.filters.applied.f.degreeProgram": "Curso/Programa",
-  "search.filters.applied.f.degreeDepartment": "Departamento",
-  "search.filters.filter.degreeProgram.head": "Curso/Programa",
-  "search.filters.filter.degreeProgram.placeholder": "Curso/Programa",
-  "search.filters.filter.degreeProgram.label": "Curso/Programa",
-  "search.filters.filter.degreeDepartment.head": "Departamento",
-  "search.filters.filter.degreeDepartment.placeholder": "Departamento",
-  "search.filters.filter.degreeDepartment.label": "Departamento",
+  "menu.section.documents": "Documentos úteis",
+  "menu.section.authorization_term": "Termo de Autorização",
+
+  // Metadados
+  "browse.metadata.advisor": "Orientador",
+  "browse.metadata.degreeProgram": "Curso/Programa",
+  "browse.metadata.advisor.breadcrumbs": "Orientador",
+  "browse.metadata.degreeProgram.breadcrumbs": "Curso/Programa",
 }
