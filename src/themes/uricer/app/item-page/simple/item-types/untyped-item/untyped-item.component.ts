@@ -35,7 +35,6 @@ import { TranslateModule } from '@ngx-translate/core';
 @listableObjectComponent(Item, ViewMode.StandalonePage, Context.Any, 'uricer')
 @Component({
   selector: 'ds-untyped-item',
-  styleUrls: ['./untyped-item.component.scss'],
   templateUrl: './untyped-item.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
