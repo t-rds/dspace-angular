@@ -12,6 +12,7 @@ import { StoreModule } from '@ngrx/store';
 import { TranslateModule } from '@ngx-translate/core';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
+import { ItemPageTitleFieldComponent } from './app/item-page/simple/field-components/specific-field/title/item-page-title-field.component';
 import { LoginPageComponent } from './app/login-page/login-page.component';
 import { LogoutPageComponent } from './app/logout-page/logout-page.component';
 import { ComcolPageBrowseByComponent } from './app/shared/comcol/comcol-page-browse-by/comcol-page-browse-by.component';
@@ -24,6 +25,7 @@ const DECLARATIONS = [
   ItemListPreviewComponent,
   LoginPageComponent,
   LogoutPageComponent,
+  ItemPageTitleFieldComponent,
 ];
 
 @NgModule({

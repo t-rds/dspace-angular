@@ -1,0 +1,10 @@
+<h1 class="item-page-title-field dont-break-out">
+  <div *ngIf="item.firstMetadataValue('dspace.entity.type') as type" class="d-inline">
+    {{ type.toLowerCase() + '.page.titleprefix' | translate }}
+  </div>
+  {{ dsoNameService.getName(item) }}
+</h1>
+
+<h2 *ngIf="item.firstMetadataValue('dc.title.alternative')" class="mt-2 d-inline dont-break-out">
+  {{ item.firstMetadataValue('dc.title.alternative') }}
+</h2>
