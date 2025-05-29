@@ -1,0 +1,81 @@
+<footer class="container-fluid py-4">
+  <div class="container">
+    <div class="row align-items-center justify-content-md-between p-0">
+      <!-- Address -->
+      <address class="d-flex flex-column col-12 col-md-6">
+        <span>{{ 'footer.copyright' | translate:{year: dateObj | date:'y'} }}</span>
+        <span>Avenida Sete de Setembro, 1621 | Fone +55 (54) 3520-9000</span>
+        <span>Caixa Postal 743 | CEP 99709-910 | Erechim-RS | Brasil</span>
+      </address>
+      <!-- Address -->
+
+      <!-- Socials -->
+      <section class="socials d-flex justify-content-center justify-content-md-end col-12 col-md-6 my-3 my-sm-0" style="gap: 1.5rem;">
+        <a href="https://facebook.com/urierechim" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.instagram.com/urierechim" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://x.com/urierechim" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+        </a>
+        <a href="https://youtube.com/@urierechim" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+        </a>
+      </section>
+      <!-- Socials -->
+    </div>
+
+    <!-- Copyright -->
+    <section class="bottom-footer mt-sm-1 p-1 d-flex justify-content-center align-items-center">
+      <div class="content-container">
+        <ul class="footer-info list-unstyled small d-flex justify-content-center align-items-center text-white text-center mb-0">
+          <li>
+            <a class="text-white" href="javascript:void(0);" (click)="openCookieSettings()">
+              {{ 'footer.link.cookies' | translate }}
+            </a>
+          </li>
+          <li>
+            <a class="text-white" routerLink="info/accessibility" role="link" tabindex="0">
+              {{ 'footer.link.accessibility' | translate }}
+            </a>
+          </li>
+          @if (showPrivacyPolicy) {
+          <li>
+            <a class="text-white" routerLink="info/privacy">
+              {{ 'footer.link.privacy-policy' | translate }}
+            </a>
+          </li>
+          }
+          @if (showEndUserAgreement) {
+          <li>
+            <a class="text-white" routerLink="info/end-user-agreement">
+              {{ 'footer.link.end-user-agreement' | translate }}
+            </a>
+          </li>
+          }
+          <li>
+            <a class="text-white" routerLink="info/feedback">
+              {{ 'footer.link.feedback' | translate }}
+            </a>
+          </li>
+          <li>
+            <a class="text-white" href="https://dspace.lyrasis.org" target="_blank" rel="noopener noreferrer">
+              {{ 'footer.link.dspace' | translate}}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- Copyright -->
+
+    <!-- Contact -->
+    <section class="bottom-footer mt-sm-1 p-1 d-flex justify-content-center align-items-center">
+      <div class="content-container">
+        <a class="text-white fw-bold" href="mailto:repositorio@uricer.edu.br">repositorio&#64;uricer.edu.br</a>
+      </div>
+    </section>
+    <!-- Contact -->
+  </div>
+</footer>

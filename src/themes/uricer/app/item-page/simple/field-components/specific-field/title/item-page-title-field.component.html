@@ -1,0 +1,16 @@
+<div>
+  <h1 class="item-page-title-field dont-break-out">
+    @if (item.firstMetadataValue('dspace.entity.type'); as type) {
+      <div class="d-inline">
+        {{ type.toLowerCase() + '.page.titleprefix' | translate }}
+      </div>
+    }
+    {{ dsoNameService.getName(item) }}
+  </h1>
+
+  @if (item.firstMetadataValue('dc.title.alternative')) {
+    <h2 class="mt-2 d-inline dont-break-out">
+      {{ item.firstMetadataValue('dc.title.alternative') }}
+    </h2>
+  }
+</div>

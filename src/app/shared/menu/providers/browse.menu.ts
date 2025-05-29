@@ -63,6 +63,15 @@ export class BrowseMenuProvider extends AbstractExpandableMenuProvider {
       getFirstSucceededRemoteData(),
       map((rd: RemoteData<PaginatedList<BrowseDefinition>>) => {
         return [
+          {
+            visible: true,
+            model: {
+              type: MenuItemType.LINK,
+              text: `menu.section.browse_global_communities_and_collections`,
+              link: `/community-list`,
+            },
+            icon: 'diagram-project',
+          },
           ...rd.payload.page.map((browseDef) => {
             return {
               visible: true,

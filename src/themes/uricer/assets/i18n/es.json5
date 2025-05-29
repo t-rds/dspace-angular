@@ -1,0 +1,35 @@
+{
+  // Título del repositorio
+  "repository.title.suffix": " | Repositório Digital",
+
+  // App
+  "home-news.title": "Repositório Digital | URI Câmpus de Erechim",
+  "home-news.lead": "Bem-vindo ao nosso Repositório Digital, onde convergem as conquistas acadêmicas e intelectuais de nossa comunidade.",
+  "home-news.message": "Aqui, reunimos uma coleção diversificada de teses, dissertações e artigos científicos que refletem o empenho e a inovação característicos de nossa instituição.",
+  "home.recent-submissions.head": "Publicaciones Recientes",
+  "home.top-level-communities.head": "Comunidades",
+  "footer.copyright": "© {{ year }} URI Câmpus de Erechim",
+
+  // Página del ítem
+  "item.page.resumo": "Resumen",
+  "item.page.abstract": "Abstract",
+  "item.page.advisors": "Asesores",
+  "item.page.degree.department": "Departamento",
+  "item.page.degree.grantor": "Institución",
+  "item.page.degree.program": "Carrera/Programa",
+  "browse.comcol.by.advisor": "Por Asesor",
+  "browse.comcol.by.degreeProgram": "Por Carrera/Programa",
+
+  // Menú
+  "menu.section.documents": "Documentos útiles",
+  "menu.section.authorization_term": "Término de autorización",
+  "menu.section.browse_global": "Explorar el Repositorio",
+  "menu.section.browse_global_by_advisor": "Por Asesor",
+  "menu.section.browse_global_by_degreeProgram": "Por Carrera/Programa",
+
+  // Metadatos
+  "browse.metadata.advisor": "Asesor",
+  "browse.metadata.degreeProgram": "Carrera/Programa",
+  "browse.metadata.advisor.breadcrumbs": "Asesor",
+  "browse.metadata.degreeProgram.breadcrumbs": "Carrera/Programa",
+}

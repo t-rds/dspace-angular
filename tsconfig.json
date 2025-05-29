@@ -6,6 +6,9 @@
   },
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "outDir": "./dist/out-tsc",
     "declaration": false,
     "emitDecoratorMetadata": true,

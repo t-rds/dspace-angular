@@ -1,0 +1,39 @@
+:host {
+  .list-group-horizontal {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include media-breakpoint-up(lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    gap: 1rem;
+
+    & > .list-group-item:first-child:not(:last-child) {
+      border-radius: var(--bs-border-radius);
+    }
+
+    & > .list-group-item:last-child:not(:first-child) {
+      border-radius: var(--bs-border-radius);
+    }
+  }
+
+  .list-group-item {
+    border: 1px solid var(--ds-comcol-border-color);
+    border-radius: var(--bs-border-radius);
+    text-decoration: none;
+    text-align: center;
+    padding: 12px 20px;
+
+    transition: all 200ms;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .list-group-item:hover, .list-group-item.active {
+    background-color: var(--ds-comcol-border-color);
+    color: var(--bs-white);
+  }
+}
