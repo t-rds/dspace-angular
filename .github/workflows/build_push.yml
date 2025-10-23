@@ -1,4 +1,4 @@
-name: Build & Push Backend (GHCR)
+name: Build & Push Frontend (GHCR)
 
 on:
   push:
@@ -9,13 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Java
-        uses: actions/setup-java@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          distribution: 'temurin'
-          java-version: '17'
-      - name: Build with Maven
-        run: mvn -DskipTests clean package
+          node-version: '20'
+      - name: Install & Build
+        run: |
+          npm ci
+          npm run build:prod
       - name: Login to GHCR
         uses: docker/login-action@v3
         with:
@@ -26,6 +27,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: server/Dockerfile
+          file: ui/Dockerfile
           push: true
-          tags: ghcr.io/t-rds/dspace:9.2
+          tags: ghcr.io/t-rds/dspace-angular:9.2
