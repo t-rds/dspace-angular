@@ -1,6 +1,7 @@
-import { projectRoot} from '../webpack/helpers';
+import { projectRoot } from '../webpack/helpers';
+
 const commander = require('commander');
-const fs = require('fs');
+const fs = require('node:fs');
 const JSON5 = require('json5');
 const _cliProgress = require('cli-progress');
 const _ = require('lodash');
@@ -42,21 +43,22 @@ function parseCliInput() {
     .usage('(-s <source-dir> [-d <output-dir>])')
     .parse(process.argv);
 
-  if (program.outputDir && program.sourceDir) {
-    if (!fs.existsSync(program.outputDir) && !fs.lstatSync(program.outputDir).isDirectory() ) {
+  const options = program.opts();
+  if (options.outputDir && options.sourceDir) {
+    if (!fs.existsSync(options.outputDir) && !fs.lstatSync(options.outputDir).isDirectory() ) {
       console.error('Output does not exist or is not a directory.');
       console.log(program.outputHelp());
       process.exit(1);
     }
-    if (!fs.existsSync(program.sourceDir) && !fs.lstatSync(program.sourceDir).isDirectory() ) {
+    if (!fs.existsSync(options.sourceDir) && !fs.lstatSync(options.sourceDir).isDirectory() ) {
       console.error('Source does not exist or is not a directory.');
       console.log(program.outputHelp());
       process.exit(1);
     }
-    fs.readdirSync(projectRoot(program.sourceDir)).forEach(file => {
-      if (fs.existsSync(program.outputDir + '/' + file) ) {
-        console.log('Merging: ' + program.outputDir + '/' + file + ' with ' + program.sourceDir + '/' + file);
-        mergeFileWithSource(program.sourceDir + '/' + file, program.outputDir + '/' + file);
+    fs.readdirSync(projectRoot(options.sourceDir)).forEach(file => {
+      if (fs.existsSync(options.outputDir + '/' + file) ) {
+        console.log('Merging: ' + options.outputDir + '/' + file + ' with ' + options.sourceDir + '/' + file);
+        mergeFileWithSource(options.sourceDir + '/' + file, options.outputDir + '/' + file);
       }
     });
   } else {
