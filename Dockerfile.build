@@ -1,25 +1,49 @@
-FROM node:22 AS build
+#############################################
+# 🧱 Etapa 1 - Build da aplicação Angular
+#############################################
+FROM node:22-bullseye-slim AS build
 
 WORKDIR /app
 
+# Copia apenas arquivos de dependência primeiro (melhor cache)
 COPY package*.json ./
+
+# Instala dependências de forma determinística
 RUN npm ci
 
+# Copia o restante do código-fonte
 COPY . .
-RUN npm run merge-i18n -- -s src/themes/uricer/assets/i18n
-RUN npm run build:prod
 
-# Runtime stage
+# Gera traduções e build de produção
+RUN npm run merge-i18n -- -s src/themes/uricer/assets/i18n && \
+    npm run build:prod
+
+
+#############################################
+# 🚀 Etapa 2 - Runtime (produção)
+#############################################
 FROM node:22-alpine
-RUN npm install -g pm2
+
+# Instala PM2 globalmente para gerenciar o processo
+RUN npm install -g pm2@latest && \
+    addgroup -S dspace && adduser -S dspace -G dspace
 
 WORKDIR /app
 
+# Copia apenas o necessário da build anterior
 COPY --chown=node:node --from=build /app/dist ./dist
-COPY --chown=node:node config ./config
-COPY --chown=node:node docker/dspace-ui.json ./dspace-ui.json
+COPY --chown=node:node --from=build /app/config ./config
+COPY --chown=node:node --from=build /app/docker/dspace-ui.json ./dspace-ui.json
 
 ENV NODE_ENV=production
 USER node
+
 EXPOSE 4000
-CMD pm2-runtime start dspace-ui.json --json
+
+# Metadados da imagem
+LABEL org.opencontainers.image.title="DSpace Angular 9.2 URI" \
+      org.opencontainers.image.version="9.2" \
+      org.opencontainers.image.vendor="URI - Universidade Regional Integrada"
+
+# Inicia via PM2 (modo produção)
+CMD ["pm2-runtime", "start", "dspace-ui.json", "--json"]
