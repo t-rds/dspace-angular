@@ -20,9 +20,9 @@ parseCliInput();
  * This script uses the i18n files found in a source directory to override settings in files with the same
  * name in a destination directory. Only the i18n labels to be overridden need be in the source files.
  *
- * Execution (using custom theme):
+ * Example execution (using custom theme):
  * ```
- *   yarn merge-i18n -s src/themes/custom/assets/i18n
+ *   npm run merge-i18n -- -s src/themes/custom/assets/i18n
  * ```
  *
  * Input parameters:
