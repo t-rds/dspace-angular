@@ -19,7 +19,6 @@ import { ThemedThumbnailComponent } from '@/app/thumbnail/themed-thumbnail.compo
 @Component({
   selector: 'ds-item-search-result-list-element',
   templateUrl: './item-search-result-list-element.component.html',
-  standalone: true,
   imports: [
     AsyncPipe,
     NgClass,

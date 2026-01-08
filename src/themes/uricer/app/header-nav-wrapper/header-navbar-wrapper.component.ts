@@ -15,7 +15,6 @@ import { slideMobileNav } from '@/app/shared/animations/slide';
   styleUrls: ['header-navbar-wrapper.component.scss'],
   templateUrl: 'header-navbar-wrapper.component.html',
   animations: [slideMobileNav],
-  standalone: true,
   imports: [
     AsyncPipe,
     ThemedHeaderComponent,

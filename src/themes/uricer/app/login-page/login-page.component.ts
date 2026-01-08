@@ -11,7 +11,6 @@ import { ThemedLogInComponent } from '@/app/shared/log-in/themed-log-in.componen
   selector: 'ds-themed-login-page',
   styleUrls: ['./login-page.component.scss'],
   templateUrl: './login-page.component.html',
-  standalone: true,
   imports: [
     ThemedLogInComponent,
     TranslateModule,

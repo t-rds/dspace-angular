@@ -12,7 +12,6 @@ import { FooterComponent as BaseComponent } from '@/app/footer/footer.component'
   selector: 'ds-themed-footer',
   styleUrls: ['./footer.component.scss'],
   templateUrl: './footer.component.html',
-  standalone: true,
   imports: [
     DatePipe,
     RouterLink,

@@ -1,7 +1,7 @@
 #############################################
 # 🧱 Etapa 1 - Build da aplicação Angular
 #############################################
-FROM node:22-bullseye-slim AS build
+FROM node:22-alpine AS build
 
 WORKDIR /app
 
@@ -25,8 +25,7 @@ RUN npm run merge-i18n -- -s src/themes/uricer/assets/i18n && \
 FROM node:22-alpine
 
 # Instala PM2 globalmente para gerenciar o processo
-RUN npm install -g pm2@latest && \
-    addgroup -S dspace && adduser -S dspace -G dspace
+RUN npm install --global pm2
 
 WORKDIR /app
 
@@ -39,11 +38,6 @@ ENV NODE_ENV=production
 USER node
 
 EXPOSE 4000
-
-# Metadados da imagem
-LABEL org.opencontainers.image.title="DSpace Angular 9.2 URI" \
-      org.opencontainers.image.version="9.2" \
-      org.opencontainers.image.vendor="URI - Universidade Regional Integrada"
 
 # Inicia via PM2 (modo produção)
 CMD ["pm2-runtime", "start", "dspace-ui.json", "--json"]

@@ -19,7 +19,6 @@ import { ThemedUserMenuComponent } from '@/app/shared/auth-nav-menu/user-menu/th
   styleUrls: ['./navbar.component.scss'],
   templateUrl: './navbar.component.html',
   animations: [slideMobileNav],
-  standalone: true,
   imports: [
     AsyncPipe,
     NgbDropdownModule,

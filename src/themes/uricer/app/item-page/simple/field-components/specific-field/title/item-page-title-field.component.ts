@@ -7,7 +7,6 @@ import { ItemPageTitleFieldComponent as BaseComponent } from '@/app/item-page/si
   selector: 'ds-themed-item-page-title-field',
   templateUrl: './item-page-title-field.component.html',
   styleUrls: ['./item-page-title-field.component.scss'],
-  standalone: true,
   imports: [
     TranslateModule,
   ],

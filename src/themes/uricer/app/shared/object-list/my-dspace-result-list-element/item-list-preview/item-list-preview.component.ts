@@ -18,7 +18,6 @@ import { ThemedThumbnailComponent } from '@/app/thumbnail/themed-thumbnail.compo
   selector: 'ds-themed-item-list-preview',
   templateUrl: './item-list-preview.component.html',
   animations: [fadeInOut],
-  standalone: true,
   imports: [
     AsyncPipe,
     ItemCollectionComponent,

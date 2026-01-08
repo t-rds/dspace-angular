@@ -10,7 +10,6 @@ import { ComcolPageBrowseByComponent as BaseComponent } from '@/app/shared/comco
   selector: 'ds-themed-comcol-page-browse-by',
   styleUrls: ['./comcol-page-browse-by.component.scss'],
   templateUrl: '../../../../../../app/shared/comcol/comcol-page-browse-by/comcol-page-browse-by.component.html',
-  standalone: true,
   imports: [
     AsyncPipe,
     FormsModule,
