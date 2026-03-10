@@ -6,9 +6,6 @@
   },
   "compilerOptions": {
     "baseUrl": "./",
-    "paths": {
-      "@/*": ["src/*"]
-    },
     "outDir": "./dist/out-tsc",
     "declaration": false,
     "emitDecoratorMetadata": true,
@@ -50,7 +47,8 @@
       ],
       "@ng-dynamic-forms/ui-ng-bootstrap": [
         "node_modules/@4science_ng-dynamic-forms/ui-ng-bootstrap"
-      ]
+      ],
+      "@/*": ["./src/*"]
     }
   },
   "angularCompilerOptions": {
