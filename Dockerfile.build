@@ -5,16 +5,10 @@ FROM node:22-alpine AS build
 
 WORKDIR /app
 
-# Copia apenas arquivos de dependência primeiro (melhor cache)
 COPY package*.json ./
-
-# Instala dependências de forma determinística
 RUN npm ci
-
-# Copia o restante do código-fonte
 COPY . .
 
-# Gera traduções e build de produção
 RUN npm run merge-i18n -- -s src/themes/uricer/assets/i18n && \
     npm run build:prod
 
@@ -24,12 +18,10 @@ RUN npm run merge-i18n -- -s src/themes/uricer/assets/i18n && \
 #############################################
 FROM node:22-alpine
 
-# Instala PM2 globalmente para gerenciar o processo
 RUN npm install --global pm2
 
 WORKDIR /app
 
-# Copia apenas o necessário da build anterior
 COPY --chown=node:node --from=build /app/dist ./dist
 COPY --chown=node:node --from=build /app/config ./config
 COPY --chown=node:node --from=build /app/docker/dspace-ui.json ./dspace-ui.json
@@ -39,5 +31,4 @@ USER node
 
 EXPOSE 4000
 
-# Inicia via PM2 (modo produção)
 CMD ["pm2-runtime", "start", "dspace-ui.json", "--json"]
