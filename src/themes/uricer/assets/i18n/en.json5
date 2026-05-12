@@ -26,10 +26,13 @@
   "menu.section.browse_global": "Browse Repository",
   "menu.section.browse_global_by_advisor": "By Advisor",
   "menu.section.browse_global_by_degreeProgram": "By Degree Program",
+  "menu.section.browse_global_by_cnpq": "By CNPq",
 
   // Metadata
   "browse.metadata.advisor": "Advisor",
   "browse.metadata.degreeProgram": "Course/Program",
   "browse.metadata.advisor.breadcrumbs": "Advisor",
   "browse.metadata.degreeProgram.breadcrumbs": "Course/Program",
+  "browse.metadata.cnpq.breadcrumbs": "By CNPq",
+  "browse.comcol.by.cnpq": "By CNPq",
 }

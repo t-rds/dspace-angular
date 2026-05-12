@@ -26,10 +26,13 @@
   "menu.section.browse_global": "Explorar el Repositorio",
   "menu.section.browse_global_by_advisor": "Por Asesor",
   "menu.section.browse_global_by_degreeProgram": "Por Carrera/Programa",
+  "menu.section.browse_global_by_cnpq": "Por CNPq",
 
   // Metadatos
   "browse.metadata.advisor": "Asesor",
   "browse.metadata.degreeProgram": "Carrera/Programa",
   "browse.metadata.advisor.breadcrumbs": "Asesor",
   "browse.metadata.degreeProgram.breadcrumbs": "Carrera/Programa",
+  "browse.metadata.cnpq.breadcrumbs": "Por CNPq",
+  "browse.comcol.by.cnpq": "Por CNPq",
 }
