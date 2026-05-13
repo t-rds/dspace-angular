@@ -38,14 +38,14 @@
   "browse.comcol.by.cnpq": "Por CNPq",
 
   // Formulário de submissão
-  "submission.sections.submit.progressbar.describe.stepItem": "Item",
-  "submission.sections.submit.progressbar.describe.stepAutor": "Autor",
-  "submission.sections.submit.progressbar.describe.stepOrientador": "Orientador",
-  "submission.sections.submit.progressbar.describe.stepCoorientador": "Coorientador",
-  "submission.sections.submit.progressbar.describe.stepBanca": "Membros da Banca",
-  "submission.sections.submit.progressbar.describe.stepMetadados": "Metadados",
-  "submission.sections.submit.progressbar.describe.stepMetadados2": "Metadados complementares",
+  "submission.sections.submit.progressbar.describe.stepItem": "Descrição sobre o Item",
+  "submission.sections.submit.progressbar.describe.stepAutor": "Descrição do(s) Autor(es)",
+  "submission.sections.submit.progressbar.describe.stepOrientador": "Descrição do(s) Orientador(es)",
+  "submission.sections.submit.progressbar.describe.stepCoorientador": "Descrição do(s) Coorientador(es)",
+  "submission.sections.submit.progressbar.describe.stepBanca": "Descrição dos Membros da Banca",
+  "submission.sections.submit.progressbar.describe.stepMetadados": "Informações · Metadados",
+  "submission.sections.submit.progressbar.describe.stepMetadados2": "Informações · Metadados complementares",
   "submission.sections.submit.progressbar.describe.stepInstituicao": "Instituição",
   "submission.sections.submit.progressbar.describe.stepDireitos": "Licenças",
-
+  "vocabulary-treeview.tree.description.cnpq": "Conselho Nacional de Desenvolvimento Científico e Tecnológico · CNPq",
 }
