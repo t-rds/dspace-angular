@@ -4,6 +4,7 @@ import {
 } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { Context } from '@/app/core/shared/context.model';
 import { ViewMode } from '@/app/core/shared/view-mode.model';
@@ -24,6 +25,7 @@ import { ThemedThumbnailComponent } from '@/app/thumbnail/themed-thumbnail.compo
     NgClass,
     RouterLink,
     ThemedThumbnailComponent,
+    TranslateModule,
     TruncatableComponent,
     TruncatablePartComponent,
   ],

@@ -30,16 +30,26 @@
       </div>
     }
     <ds-item-page-file-section [item]="object" />
-    <ds-metadata-representation-list class="ds-item-page-mixed-author-field"
-      [parentItem]="object"
-      [itemType]="'Person'"
-      [metadataFields]="['dc.contributor.author', 'dc.creator']"
-      [label]="'item.page.authors' | translate" />
-    <ds-metadata-representation-list class="ds-item-page-mixed-author-field"
-      [parentItem]="object"
-      [itemType]="'Advisor'"
-      [metadataFields]="['dc.contributor.advisor', 'dc.contributor.advisorco']"
-      [label]="'item.page.advisors' | translate" />
+
+    <ds-custom-person-list class="ds-item-page-mixed-author-field"
+      [item]="object"
+      [personMetadataFields]="['dc.contributor.author', 'dc.creator']"
+      [lattesMetadataFields]="['dc.contributor.authorLattes', 'dc.creator.lattes']"
+      [orcidMetadataFields]="['dc.contributor.authorID', 'dc.creator.id']"
+      [label]="'item.page.authors'" />
+    <ds-custom-person-list class="ds-item-page-mixed-author-field"
+      [item]="object"
+      [personMetadataFields]="['dc.contributor.advisor', 'dc.contributor.advisorco']"
+      [lattesMetadataFields]="['dc.contributor.advisorLattes', 'dc.contributor.advisorcoLattes']"
+      [orcidMetadataFields]="['dc.contributor.advisorID', 'dc.contributor.advisorcoID']"
+      [label]="'item.page.advisors'" />
+    <ds-custom-person-list class="ds-item-page-mixed-author-field"
+      [item]="object"
+      [personMetadataFields]="['dc.contributor.referee']"
+      [lattesMetadataFields]="['dc.contributor.refereeLattes']"
+      [orcidMetadataFields]="['dc.contributor.refereeID']"
+      [label]="'item.page.members'" />
+
     <ds-generic-item-page-field [item]="object"
       [fields]="['journal.title']"
       [label]="'item.page.journal-title'" />
@@ -68,13 +78,13 @@
       [separator]="', '"
       [label]="'item.page.subject'" />
     <ds-generic-item-page-field [item]="object"
-      [fields]="['dc.degree.grantor']"
+      [fields]="['dc.degree.grantor', 'dc.publisher.grantor']"
       [label]="'item.page.degree.grantor'" />
     <ds-generic-item-page-field [item]="object"
-      [fields]="['dc.degree.program']"
+      [fields]="['dc.degree.program', 'dc.publisher.program']"
       [label]="'item.page.degree.program'" />
     <ds-generic-item-page-field [item]="object"
-      [fields]="['dc.degree.department']"
+      [fields]="['dc.degree.department', 'dc.publisher.department']"
       [label]="'item.page.degree.department'" />
     <ds-generic-item-page-field [item]="object"
       [fields]="['dc.identifier.citation']"
@@ -103,9 +113,13 @@
     <ds-item-page-uri-field [item]="object"
       [fields]="['datacite.relation.isReferencedBy']"
       [label]="'item.page.referenced'" />
+    <ds-generic-item-page-field [item]="object"
+      [fields]="['dc.subject.cnpq']"
+      [separator]="', '"
+      [label]="'item.page.subject.cnpq'" />
     <ds-item-page-cc-license-field [item]="object" [variant]="'full'" />
     <div>
-      <a class="btn btn-outline-primary" [routerLink]="[itemPageRoute + '/full']" role="button" role="button" tabindex="0">
+      <a class="btn btn-outline-primary" [routerLink]="[itemPageRoute + '/full']" role="button" tabindex="0">
         <i class="fas fa-info-circle"></i> {{"item.page.link.full" | translate}}
       </a>
     </div>

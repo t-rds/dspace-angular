@@ -12,40 +12,50 @@
   "footer.copyright": "© {{ year }} URI Câmpus de Erechim",
 
   // Página
-  "item.page.resumo": "Resumo",
   "item.page.abstract": "Abstract/Resumen",
   "item.page.advisors": "Orientadores",
   "item.page.degree.department": "Departamento",
   "item.page.degree.grantor": "Instituição",
   "item.page.degree.program": "Curso/Programa",
+  "item.page.members": "Membros da Banca",
+  "item.page.resumo": "Resumo",
+  "item.page.subject.cnpq": "Área CNPq",
   "browse.comcol.by.advisor": "Por Orientador",
+  "browse.comcol.by.cnpq": "Por Área CNPq",
   "browse.comcol.by.degreeProgram": "Por Curso/Programa",
 
   // Menu
+  "menu.section.authorization_term": "Termo de Autorização",
   "menu.section.browse_global": "Navegar no Repositório",
   "menu.section.browse_global_by_advisor": "Por Orientador",
+  "menu.section.browse_global_by_cnpq": "Por Área CNPq",
   "menu.section.browse_global_by_degreeProgram": "Por Curso/Programa",
   "menu.section.documents": "Documentos úteis",
-  "menu.section.authorization_term": "Termo de Autorização",
-  "menu.section.browse_global_by_cnpq": "Por CNPq",
 
   // Metadados
   "browse.metadata.advisor": "Orientador",
-  "browse.metadata.degreeProgram": "Curso/Programa",
   "browse.metadata.advisor.breadcrumbs": "Orientador",
+  "browse.metadata.degreeProgram": "Curso/Programa",
   "browse.metadata.degreeProgram.breadcrumbs": "Curso/Programa",
-  "browse.metadata.cnpq.breadcrumbs": "Por CNPq",
-  "browse.comcol.by.cnpq": "Por CNPq",
+  "browse.metadata.cnpq": "Área CNPq",
+  "browse.metadata.cnpq.breadcrumbs": "Navegando por Área CNPq",
+  "browse.metadata.cnpq.tree.description": "Conselho Nacional de Desenvolvimento Científico e Tecnológico · CNPq",
+
+  // Filtros/Busca
+  "search.filters.filter.subject_cnpq.head": "CNPq",
+  "search.filters.applied.f.subject_cnpq": "Assunto",
 
   // Formulário de submissão
-  "submission.sections.submit.progressbar.describe.stepItem": "Descrição sobre o Item",
   "submission.sections.submit.progressbar.describe.stepAutor": "Descrição do(s) Autor(es)",
-  "submission.sections.submit.progressbar.describe.stepOrientador": "Descrição do(s) Orientador(es)",
-  "submission.sections.submit.progressbar.describe.stepCoorientador": "Descrição do(s) Coorientador(es)",
   "submission.sections.submit.progressbar.describe.stepBanca": "Descrição dos Membros da Banca",
+  "submission.sections.submit.progressbar.describe.stepCoorientador": "Descrição do(s) Coorientador(es)",
+  "submission.sections.submit.progressbar.describe.stepDireitos": "Licenças",
+  "submission.sections.submit.progressbar.describe.stepItem": "Descrição sobre o Item",
+  "submission.sections.submit.progressbar.describe.stepInstituicao": "Instituição",
   "submission.sections.submit.progressbar.describe.stepMetadados": "Informações · Metadados",
   "submission.sections.submit.progressbar.describe.stepMetadados2": "Informações · Metadados complementares",
-  "submission.sections.submit.progressbar.describe.stepInstituicao": "Instituição",
-  "submission.sections.submit.progressbar.describe.stepDireitos": "Licenças",
+  "submission.sections.submit.progressbar.describe.stepOrientador": "Descrição do(s) Orientador(es)",
+
   "vocabulary-treeview.tree.description.cnpq": "Conselho Nacional de Desenvolvimento Científico e Tecnológico · CNPq",
+
 }

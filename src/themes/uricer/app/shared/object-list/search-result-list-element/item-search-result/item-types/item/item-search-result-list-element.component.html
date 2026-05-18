@@ -39,9 +39,9 @@
               <span class="item-list-date" [innerHTML]="firstMetadataValue('dc.date.issued')"></span>
               })
             }
-            @if (dso.allMetadata(['dc.contributor.author', 'dc.creator', 'dc.contributor.*']).length > 0) {
+            @if (dso.allMetadata(['dc.contributor.author', 'dc.creator', 'dc.contributor.advisor', 'dc.contributor.advisorco']).length > 0) {
               <span class="item-list-authors">
-                @for (author of allMetadataValues(['dc.contributor.author', 'dc.creator', 'dc.contributor.*']); track author; let last = $last) {
+                @for (author of allMetadataValues(['dc.contributor.author', 'dc.creator', 'dc.contributor.advisor', 'dc.contributor.advisorco']); track author; let last = $last) {
                   <span>
                     <span [innerHTML]="author"><span [innerHTML]="author"></span></span>
                     @if (!last) {
@@ -57,6 +57,7 @@
           <div class="item-list-abstract">
             <ds-truncatable-part [id]="dso.id" [minLines]="3">
               <span [innerHTML]="firstMetadataValue('dc.description.resumo')"></span>
+              <span [innerHTML]="(firstMetadataValue('dc.description.resumo')) || (firstMetadataValue('dc.description.abstract')) || ('mydspace.results.no-abstract' | translate)"></span>
             </ds-truncatable-part>
           </div>
         }
