@@ -97,6 +97,10 @@
         [cluster]="true"
       />
     }
+    <ds-generic-item-page-field [item]="object"
+      [fields]="['dc.subject.cnpq']"
+      [separator]="', '"
+      [label]="'item.page.subject.cnpq'" />
     <ds-item-page-uri-field [item]="object"
       [fields]="['dc.identifier.uri']"
       [label]="'item.page.uri'" />
@@ -113,10 +117,6 @@
     <ds-item-page-uri-field [item]="object"
       [fields]="['datacite.relation.isReferencedBy']"
       [label]="'item.page.referenced'" />
-    <ds-generic-item-page-field [item]="object"
-      [fields]="['dc.subject.cnpq']"
-      [separator]="', '"
-      [label]="'item.page.subject.cnpq'" />
     <ds-item-page-cc-license-field [item]="object" [variant]="'full'" />
     <div>
       <a class="btn btn-outline-primary" [routerLink]="[itemPageRoute + '/full']" role="button" tabindex="0">
