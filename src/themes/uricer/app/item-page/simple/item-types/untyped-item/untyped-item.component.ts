@@ -21,14 +21,12 @@ import { GeospatialItemPageFieldComponent } from '@/app/item-page/simple/field-c
 import { ThemedItemPageTitleFieldComponent } from '@/app/item-page/simple/field-components/specific-field/title/themed-item-page-field.component';
 import { ItemPageUriFieldComponent } from '@/app/item-page/simple/field-components/specific-field/uri/item-page-uri-field.component';
 import { UntypedItemComponent as BaseComponent } from '@/app/item-page/simple/item-types/untyped-item/untyped-item.component';
-// import { ThemedMetadataRepresentationListComponent } from '@/app/item-page/simple/metadata-representation-list/themed-metadata-representation-list.component';
 import { DsoEditMenuComponent } from '@/app/shared/dso-page/dso-edit-menu/dso-edit-menu.component';
 import { MetadataFieldWrapperComponent } from '@/app/shared/metadata-field-wrapper/metadata-field-wrapper.component';
 import { listableObjectComponent } from '@/app/shared/object-collection/shared/listable-object/listable-object.decorator';
 import { ThemedResultsBackButtonComponent } from '@/app/shared/results-back-button/themed-results-back-button.component';
 import { ThemedThumbnailComponent } from '@/app/thumbnail/themed-thumbnail.component';
-
-import { CustomPersonListComponent } from './custom-person-list.component';
+import { ThemedMetadataRepresentationListComponent } from '@/app/item-page/simple/metadata-representation-list/themed-metadata-representation-list.component';
 
 /**
  * Component that represents an untyped Item page
@@ -41,7 +39,6 @@ import { CustomPersonListComponent } from './custom-person-list.component';
   imports: [
     AsyncPipe,
     CollectionsComponent,
-    CustomPersonListComponent,
     DsoEditMenuComponent,
     GenericItemPageFieldComponent,
     GeospatialItemPageFieldComponent,
@@ -55,7 +52,7 @@ import { CustomPersonListComponent } from './custom-person-list.component';
     ThemedFileSectionComponent,
     ThemedItemPageTitleFieldComponent,
     ThemedMediaViewerComponent,
-    // ThemedMetadataRepresentationListComponent,
+    ThemedMetadataRepresentationListComponent,
     ThemedResultsBackButtonComponent,
     ThemedThumbnailComponent,
     TranslateModule,

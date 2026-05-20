@@ -31,34 +31,22 @@
     }
     <ds-item-page-file-section [item]="object" />
 
-    <ds-custom-person-list class="ds-item-page-mixed-author-field"
-      [item]="object"
-      [personMetadataFields]="['dc.contributor.author', 'dc.creator']"
-      [lattesMetadataFields]="['dc.contributor.authorLattes', 'dc.creator.lattes']"
-      [orcidMetadataFields]="['dc.contributor.authorID', 'dc.creator.id']"
-      [label]="'item.page.authors'" />
-    <ds-custom-person-list class="ds-item-page-mixed-author-field"
-      [item]="object"
-      [personMetadataFields]="['dc.contributor.advisor', 'dc.contributor.advisorco']"
-      [lattesMetadataFields]="['dc.contributor.advisorLattes', 'dc.contributor.advisorcoLattes']"
-      [orcidMetadataFields]="['dc.contributor.advisorID', 'dc.contributor.advisorcoID']"
-      [label]="'item.page.advisors'" />
-    <ds-custom-person-list class="ds-item-page-mixed-author-field"
-      [item]="object"
-      [personMetadataFields]="['dc.contributor.referee']"
-      [lattesMetadataFields]="['dc.contributor.refereeLattes']"
-      [orcidMetadataFields]="['dc.contributor.refereeID']"
-      [label]="'item.page.members'" />
+    <ds-metadata-representation-list class="ds-item-page-mixed-author-field"
+      [parentItem]="object"
+      [itemType]="'Person'"
+      [metadataFields]="['dc.contributor.author', 'dc.creator']"
+      [label]="'item.page.authors' | translate" />
+    <ds-metadata-representation-list class="ds-item-page-mixed-author-field"
+      [parentItem]="object"
+      [itemType]="'Person'"
+      [metadataFields]="['dc.contributor.advisor', 'dc.contributor.advisorco']"
+      [label]="'item.page.advisors' | translate" />
+    <ds-metadata-representation-list class="ds-item-page-mixed-author-field"
+      [parentItem]="object"
+      [itemType]="'Person'"
+      [metadataFields]="['dc.contributor.referee']"
+      [label]="'item.page.members' | translate" />
 
-    <ds-generic-item-page-field [item]="object"
-      [fields]="['journal.title']"
-      [label]="'item.page.journal-title'" />
-    <ds-generic-item-page-field [item]="object"
-      [fields]="['journal.identifier.issn']"
-      [label]="'item.page.journal-issn'" />
-    <ds-generic-item-page-field [item]="object"
-      [fields]="['journalvolume.identifier.name']"
-      [label]="'item.page.volume-title'" />
     <ds-generic-item-page-field [item]="object"
       [fields]="['dc.publisher']"
       [label]="'item.page.publisher'" />
@@ -67,10 +55,7 @@
 
   <div class="col-xs-12 col-md-8">
     <ds-generic-item-page-field [item]="object"
-      [fields]="['dc.description.resumo']"
-      [label]="'item.page.resumo'" />
-    <ds-generic-item-page-field [item]="object"
-      [fields]="['dc.description']"
+      [fields]="['dc.description.resumo', 'dc.description']"
       [label]="'item.page.resumo'" />
     <ds-item-page-abstract-field [item]="object" />
     <ds-generic-item-page-field [item]="object"
@@ -78,7 +63,7 @@
       [separator]="', '"
       [label]="'item.page.subject'" />
     <ds-generic-item-page-field [item]="object"
-      [fields]="['dc.degree.grantor', 'dc.publisher.grantor']"
+      [fields]="['dc.degree.grantor', 'dc.publisher']"
       [label]="'item.page.degree.grantor'" />
     <ds-generic-item-page-field [item]="object"
       [fields]="['dc.degree.program', 'dc.publisher.program']"
@@ -105,18 +90,6 @@
       [fields]="['dc.identifier.uri']"
       [label]="'item.page.uri'" />
     <ds-item-page-collections [item]="object" />
-    <ds-item-page-uri-field [item]="object"
-      [fields]="['coar.notify.endorsedBy']"
-      [label]="'item.page.endorsement'" />
-    <ds-item-page-uri-field [item]="object"
-      [fields]="['datacite.relation.isReviewedBy']"
-      [label]="'item.page.review'" />
-    <ds-item-page-uri-field [item]="object"
-      [fields]="['datacite.relation.isSupplementedBy']"
-      [label]="'item.page.supplemented'" />
-    <ds-item-page-uri-field [item]="object"
-      [fields]="['datacite.relation.isReferencedBy']"
-      [label]="'item.page.referenced'" />
     <ds-item-page-cc-license-field [item]="object" [variant]="'full'" />
     <div>
       <a class="btn btn-outline-primary" [routerLink]="[itemPageRoute + '/full']" role="button" tabindex="0">

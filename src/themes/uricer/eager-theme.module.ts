@@ -3,10 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { RootModule } from '@/app/root.module';
 
+import { PersonItemMetadataListElementComponent } from './app/entity-groups/research-entities/metadata-representations/person/person-item-metadata-list-element.component';
 import { FooterComponent } from './app/footer/footer.component';
 import { HeaderComponent } from './app/header/header.component';
 import { HeaderNavbarWrapperComponent } from './app/header-nav-wrapper/header-navbar-wrapper.component';
 import { HomeNewsComponent } from './app/home-page/home-news/home-news.component';
+import { PersonComponent } from './app/item-page/simple/item-types/person/person.component';
+import { PublicationComponent } from './app/item-page/simple/item-types/publication/publication.component';
 import { UntypedItemComponent } from './app/item-page/simple/item-types/untyped-item/untyped-item.component';
 import { NavbarComponent } from './app/navbar/navbar.component';
 import { ItemSearchResultListElementComponent } from './app/shared/object-list/search-result-list-element/item-search-result/item-types/item/item-search-result-list-element.component';
@@ -18,6 +21,9 @@ import { ItemSearchResultListElementComponent } from './app/shared/object-list/s
 const ENTRY_COMPONENTS = [
   ItemSearchResultListElementComponent,
   UntypedItemComponent,
+  PersonComponent,
+  PersonItemMetadataListElementComponent,
+  PublicationComponent,
 ];
 
 const DECLARATIONS = [

@@ -1,0 +1,15 @@
+<a [href]="lattesUrl"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="lattes-link">
+  <img placement="top"
+       [ngbTooltip]="lattesTooltipTemplate"
+       class="lattes-icon"
+       alt="Lattes {{ lattesTooltip }}"
+       src="assets/uricer/images/lattes.logo.icon.svg"
+       data-test="lattesIcon"/>
+</a>
+
+<ng-template #lattesTooltipTemplate>
+  <span class="text-muted">{{ lattesTooltip }}</span>
+</ng-template>
