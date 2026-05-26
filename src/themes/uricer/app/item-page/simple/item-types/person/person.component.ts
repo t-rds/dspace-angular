@@ -10,7 +10,6 @@ import { Context } from '@/app/core/shared/context.model';
 import { ViewMode } from '@/app/core/shared/view-mode.model';
 import { CollectionsComponent } from '@/app/item-page/field-components/collections/collections.component';
 import { ThemedMediaViewerComponent } from '@/app/item-page/media-viewer/themed-media-viewer.component';
-import { ItemPageOrcidFieldComponent } from '@/app/item-page/simple/field-components/specific-field/orcid/item-page-orcid-field.component';
 import { ThemedItemPageTitleFieldComponent } from '@/app/item-page/simple/field-components/specific-field/title/themed-item-page-field.component';
 import { ItemPageUriFieldComponent } from '@/app/item-page/simple/field-components/specific-field/uri/item-page-uri-field.component';
 import { PublicationComponent as BaseComponent } from '@/app/item-page/simple/item-types/publication/publication.component';
@@ -21,6 +20,7 @@ import { ThemedResultsBackButtonComponent } from '@/app/shared/results-back-butt
 import { ThemedThumbnailComponent } from '@/app/thumbnail/themed-thumbnail.component';
 
 import { ItemPageLattesFieldComponent } from '../../field-components/specific-field/lattes/item-page-lattes-field.component';
+import { ItemPageOrcidFieldComponent } from '../../field-components/specific-field/orcid/item-page-orcid-field.component';
 
 @listableObjectComponent('Person', ViewMode.StandalonePage, Context.Any, 'uricer')
 @Component({
