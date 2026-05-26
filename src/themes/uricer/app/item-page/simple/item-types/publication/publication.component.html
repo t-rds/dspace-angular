@@ -59,9 +59,6 @@
     <ds-generic-item-page-field [item]="object"
       [fields]="['journalvolume.identifier.name']"
       [label]="'publication.page.volume-title'"/>
-    <ds-generic-item-page-field [item]="object"
-      [fields]="['dc.publisher']"
-      [label]="'publication.page.publisher'"/>
     <ds-item-page-date-field [item]="object"></ds-item-page-date-field>
   </div>
   <div class="col-12 col-md-8">
@@ -74,14 +71,18 @@
       [separator]="', '"
       [label]="'item.page.subject'" />
     <ds-generic-item-page-field [item]="object"
-      [fields]="['dc.degree.grantor', 'dc.publisher.grantor']"
-      [label]="'item.page.degree.grantor'" />
+      [fields]="['dc.degree.grantor', 'dc.publisher']"
+      [label]="'item.page.publisher'" />
     <ds-generic-item-page-field [item]="object"
-      [fields]="['dc.degree.program', 'dc.publisher.program']"
-      [label]="'item.page.degree.program'" />
+      [fields]="['dc.publisher.program', 'dc.publisher.program']"
+      [label]="'item.page.publisher.program'" />
     <ds-generic-item-page-field [item]="object"
-      [fields]="['dc.degree.department', 'dc.publisher.department']"
-      [label]="'item.page.degree.department'" />
+      [fields]="['dc.publisher.department', 'dc.publisher.department']"
+      [label]="'item.page.publisher.department'" />
+    <ds-generic-item-page-field [item]="object"
+      [fields]="['dc.publisher.ror']"
+      [label]="'item.page.publisher.ror'" />
+
     <ds-generic-item-page-field [item]="object"
       [fields]="['dc.identifier.citation']"
       [label]="'item.page.citation'" />
@@ -95,31 +96,7 @@
       [label]="'item.page.uri'">
     </ds-item-page-uri-field>
     <ds-item-page-collections [item]="object"></ds-item-page-collections>
-    <ds-item-page-uri-field [item]="object"
-      [fields]="['coar.notify.endorsedBy']"
-      [label]="'item.page.endorsement'">
-    </ds-item-page-uri-field>
-    <ds-item-page-uri-field [item]="object"
-      [fields]="['datacite.relation.isReviewedBy']"
-      [label]="'item.page.review'">
-    </ds-item-page-uri-field>
-    <ds-item-page-uri-field [item]="object"
-      [fields]="['datacite.relation.isSupplementedBy']"
-      [label]="'item.page.supplemented'">
-    </ds-item-page-uri-field>
-    <ds-item-page-uri-field [item]="object"
-      [fields]="['datacite.relation.isReferencedBy']"
-      [label]="'item.page.referenced'">
-    </ds-item-page-uri-field>
-    @if (geospatialItemPageFieldsEnabled) {
-      <ds-geospatial-item-page-field [item]="object"
-                                     [label]="'item.page.places'"
-                                     [pointFields]="['dcterms.spatial']"
-                                     [bboxFields]="['dcterms.spatial']"
-                                     [cluster]="true"
-      >
-      </ds-geospatial-item-page-field>
-    }
+    <ds-item-page-cc-license-field [item]="object" [variant]="'full'" />
 
     <ds-related-items
       [parentItem]="object"

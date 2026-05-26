@@ -89,7 +89,14 @@ export class ItemPageLattesFieldComponent extends ItemPageFieldComponent impleme
   ngOnInit(): void {
 
     const metadata = this.getLattesMetadata();
-    this.lattesUrl = metadata?.value.trim() || null;
+    const value = metadata?.value?.trim();
+
+    if (value) {
+      this.lattesUrl = value.startsWith('http') ? value : `https://lattes.cnpq.br/${value.replace(/^\//, '')}`;
+    } else {
+      this.lattesUrl = null;
+    }
+
     this.hasLattesMetadata = !!this.lattesUrl;
   }
 
