@@ -7,23 +7,27 @@
   <ds-dso-edit-menu />
 </div>
 <div class="row py-2">
-  <div class="col-xs-12 col-md-4">
-    @if (!(mediaViewer.image || mediaViewer.video)) {
-      <ds-metadata-field-wrapper [hideIfNoTextContent]="false">
-        <ds-thumbnail [thumbnail]="object?.thumbnail | async" />
-      </ds-metadata-field-wrapper>
-    }
-    @if (mediaViewer.image || mediaViewer.video) {
-      <div class="mb-2">
-        <ds-media-viewer [item]="object" />
-      </div>
-    }
+  <div class="col-xs-12 col-md-3">
+    <ds-metadata-field-wrapper [hideIfNoTextContent]="false">
+      <ds-thumbnail [thumbnail]="object?.thumbnail | async"
+        [defaultImage]="'assets/images/person-placeholder.svg'"
+        [alt]="'thumbnail.person.alt'"
+        [placeholder]="'thumbnail.person.placeholder'" />
+    </ds-metadata-field-wrapper>
   </div>
 
-  <div class="col-xs-12 col-md-8">
+  <div class="col-xs-12 col-md-9">
     <ds-item-page-lattes-field [item]="object" />
 
     <ds-item-page-orcid-field [item]="object" />
+
+    <ds-item-page-uri-field [item]="object"
+      [fields]="['person.identifier.rid']"
+      [label]="'item.page.rid'" />
+
+    <ds-item-page-uri-field [item]="object"
+      [fields]="['person.identifier.scopus-author-id']"
+      [label]="'item.page.scopusId'" />
 
     <ds-item-page-uri-field [item]="object"
       [fields]="['dc.identifier.uri']"
@@ -36,5 +40,27 @@
         <i class="fas fa-info-circle"></i> {{"item.page.link.full" | translate}}
       </a>
     </div>
+
+  </div>
+  <div class="mt-5 w-100 px-0">
+    <ds-tabbed-related-entities-search
+      [item]="object"
+      [relationTypes]="[
+        {
+          label: 'isAuthorOfPublication',
+          filter: 'isAuthorOfPublication',
+          configuration: 'default-relationships'
+        },
+        {
+          label: 'isAdvisorOfPublication',
+          filter: 'isAdvisorOfPublication',
+          configuration: 'default-relationships'
+        },
+        {
+          label: 'isRefereeOfPublication',
+          filter: 'isRefereeOfPublication',
+          configuration: 'default-relationships'
+        }
+      ]" />
   </div>
 </div>

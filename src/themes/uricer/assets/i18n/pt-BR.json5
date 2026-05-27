@@ -14,13 +14,15 @@
   // Página
   "item.page.abstract": "Abstract/Resumen",
   "item.page.advisors": "Orientadores",
-  "item.page.lattes-profile": "Lattes Id",
+  "item.page.lattes-profile": "ID Lattes",
   "item.page.members": "Membros da Banca",
   "item.page.orcid-profile": "ORCID iD",
   "item.page.publisher": "Instituição",
   "item.page.publisher.department": "Departamento",
   "item.page.publisher.program": "Curso/Programa",
   "item.page.publisher.ror": "Research Organization Registry (ROR)",
+  "item.page.relationships.isAdvisorOfPublication": "Orientações",
+  "item.page.relationships.isRefereeOfPublication": "Bancas",
   "item.page.resumo": "Resumo",
   "item.page.subject.cnpq": "Área CNPq",
 
@@ -33,26 +35,43 @@
   "menu.section.browse_global": "Navegar no Repositório",
   "menu.section.browse_global_by_advisor": "Por Orientador",
   "menu.section.browse_global_by_cnpq": "Por Área CNPq",
-  "menu.section.browse_global_by_degreeProgram": "Por Curso/Programa",
+  "menu.section.browse_global_by_program": "Por Curso/Programa",
   "menu.section.documents": "Documentos úteis",
 
   // Metadados
   "browse.metadata.advisor": "Orientador",
   "browse.metadata.advisor.breadcrumbs": "Orientador",
-  "browse.metadata.degreeProgram": "Curso/Programa",
-  "browse.metadata.degreeProgram.breadcrumbs": "Curso/Programa",
   "browse.metadata.cnpq": "Área CNPq",
   "browse.metadata.cnpq.breadcrumbs": "Navegando por Área CNPq",
   "browse.metadata.cnpq.tree.description": "Conselho Nacional de Desenvolvimento Científico e Tecnológico · CNPq",
+  "browse.metadata.program": "Curso/Programa",
+  "browse.metadata.program.breadcrumbs": "Curso/Programa",
 
   // Filtros/Busca
-  "search.filters.filter.subject_cnpq.head": "CNPq",
+  "search.filters.applied.f.isAuthorOfPublication": "Autor",
+  "search.filters.applied.f.isAdvisorOfPublication": "Orientador",
+  "search.filters.applied.f.isRefereeOfPublication": "Banca",
   "search.filters.applied.f.subject_cnpq": "Assunto",
+  "search.filters.filter.subject_cnpq.head": "CNPq",
 
   // Person
   "person.lattes-tooltip": "Lattes: {{name}}",
-  "person.orcid-tooltip": "ORCID: {{orcid}}",
+  "person.orcid-tooltip": "ORCID: {{name}}",
 
   "vocabulary-treeview.tree.description.cnpq": "Conselho Nacional de Desenvolvimento Científico e Tecnológico · CNPq",
+
+  // Formulários
+  "submission.sections.submit.progressbar.describe.stepPubPerson": "Informações de Autoria",
+  "submission.sections.submit.progressbar.describe.stepPubMetadata": "Informações Básicas",
+  "submission.sections.submit.progressbar.describe.stepPubOrgUnit": "Unidade Organizacional",
+  "submission.sections.submit.progressbar.describe.stepRights": "Direitos",
+  "form.number-picker.label.Day": "Dia",
+  "form.number-picker.label.Month": "Mês",
+  "form.number-picker.label.Year": "Ano",
+
+  // Relacionamentos
+  "relationships.Publication.isAdvisorOfPublication.Person": "Orientadores",
+  "relationships.Publication.isCoAdvisorOfPublication.Person": "Coorientadores",
+  "relationships.Publication.isRefereeOfPublication.Person": "Banca",
 
 }

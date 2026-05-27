@@ -9,10 +9,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Context } from '@/app/core/shared/context.model';
 import { ViewMode } from '@/app/core/shared/view-mode.model';
 import { CollectionsComponent } from '@/app/item-page/field-components/collections/collections.component';
-import { ThemedMediaViewerComponent } from '@/app/item-page/media-viewer/themed-media-viewer.component';
 import { ThemedItemPageTitleFieldComponent } from '@/app/item-page/simple/field-components/specific-field/title/themed-item-page-field.component';
 import { ItemPageUriFieldComponent } from '@/app/item-page/simple/field-components/specific-field/uri/item-page-uri-field.component';
 import { PublicationComponent as BaseComponent } from '@/app/item-page/simple/item-types/publication/publication.component';
+import { TabbedRelatedEntitiesSearchComponent } from '@/app/item-page/simple/related-entities/tabbed-related-entities-search/tabbed-related-entities-search.component';
 import { DsoEditMenuComponent } from '@/app/shared/dso-page/dso-edit-menu/dso-edit-menu.component';
 import { MetadataFieldWrapperComponent } from '@/app/shared/metadata-field-wrapper/metadata-field-wrapper.component';
 import { listableObjectComponent } from '@/app/shared/object-collection/shared/listable-object/listable-object.decorator';
@@ -36,9 +36,9 @@ import { ItemPageOrcidFieldComponent } from '../../field-components/specific-fie
     ItemPageOrcidFieldComponent,
     ItemPageUriFieldComponent,
     MetadataFieldWrapperComponent,
+    TabbedRelatedEntitiesSearchComponent,
     RouterLink,
     ThemedItemPageTitleFieldComponent,
-    ThemedMediaViewerComponent,
     ThemedResultsBackButtonComponent,
     ThemedThumbnailComponent,
     TranslateModule,

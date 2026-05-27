@@ -28,9 +28,9 @@
         }
         <span class="text-muted">
           <ds-truncatable-part [id]="dso.id" [minLines]="1">
-            @if (dso.firstMetadataValue('dc.publisher') || dso.firstMetadataValue('dc.date.issued')) {
-              (@if (dso.firstMetadataValue('dc.publisher')) {
-              <span class="item-list-publisher" [innerHTML]="firstMetadataValue('dc.publisher')"></span>
+            @if (dso.firstMetadataValue('dc.publisher.initials') || dso.firstMetadataValue('dc.date.issued')) {
+              (@if (dso.firstMetadataValue('dc.publisher.initials')) {
+              <span class="item-list-publisher" [innerHTML]="firstMetadataValue('dc.publisher.initials')"></span>
             }
             @if (dso.firstMetadataValue('dc.publisher') && dso.firstMetadataValue('dc.date.issued')) {
               <span>, </span>
