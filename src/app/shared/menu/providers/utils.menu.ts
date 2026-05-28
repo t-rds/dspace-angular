@@ -37,6 +37,7 @@ export class UtilsMenuProvider extends AbstractExpandableMenuProvider {
           href: '/assets/uricer/uploads/termo_autorizacao.pdf',
         },
         icon: 'diagram-project',
+        target: '_blank',
       } as PartialMenuSection,
     ]);
   }
