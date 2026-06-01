@@ -9,7 +9,7 @@ import { ThemedSubmissionEditComponent } from '../submission/edit/themed-submiss
 export const ROUTES: Route[] = [
   {
     path: ':id',
-    runGuardsAndResolvers: 'always',
+    runGuardsAndResolvers: 'pathParamsChange',
     resolve: {
       breadcrumb: editItemBreadcrumbResolver,
     },

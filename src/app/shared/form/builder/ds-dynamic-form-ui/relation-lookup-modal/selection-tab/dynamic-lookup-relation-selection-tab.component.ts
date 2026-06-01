@@ -6,7 +6,6 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { Router } from '@angular/router';
 import {
   buildPaginatedList,
   PaginatedList,
@@ -109,8 +108,7 @@ export class DsDynamicLookupRelationSelectionTabComponent implements OnInit {
    */
   currentPagination$: Observable<PaginationComponentOptions>;
 
-  constructor(private router: Router,
-              private searchConfigService: SearchConfigurationService,
+  constructor(private searchConfigService: SearchConfigurationService,
               private paginationService: PaginationService,
   ) {
   }
@@ -149,8 +147,8 @@ export class DsDynamicLookupRelationSelectionTabComponent implements OnInit {
    * Method to reset the route when the tab is opened to make sure no strange pagination issues appears
    */
   resetRoute() {
-    this.paginationService.updateRoute(this.searchConfigService.paginationID, {
-      page: 1,
+    this.searchConfigService.updateLocalSearchOptions({}, {
+      currentPage: 1,
       pageSize: 5,
     });
   }

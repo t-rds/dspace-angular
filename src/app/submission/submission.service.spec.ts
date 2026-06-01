@@ -1015,6 +1015,30 @@ describe('SubmissionService', () => {
       expect((service as any).router.navigateByUrl).toHaveBeenCalledWith('/items/' + itemUuid, { replaceUrl: true });
 
     }));
+
+    it('should redirect to Item page when the item has no bundles', fakeAsync(() => {
+      scheduler = getTestScheduler();
+
+      (requestService.setStaleByHrefSubstring as jasmine.Spy).calls.reset();
+      const itemUuid = 'd62fc60f-e9a5-48e6-973a-90819acf23ae';
+      const mockItem = Object.assign(new Item(), {
+        uuid: itemUuid,
+        _links: {
+          self: { href: 'test-href' },
+          bundles: { href: 'test-bundles-href' },
+        },
+        bundles: cold('a', {
+          a: createSuccessfulRemoteDataObject(buildPaginatedList(new PageInfo(), [])),
+        }),
+      });
+      spyOn(itemService as any, 'findById').and.returnValue(cold('a', { a: createSuccessfulRemoteDataObject(mockItem) }));
+
+      scheduler.schedule(() => service.invalidateCacheAndRedirectToItemPage(`${itemUuid}:FULL`));
+      scheduler.flush();
+      tick();
+
+      expect((service as any).router.navigateByUrl).toHaveBeenCalledWith('/items/' + itemUuid, { replaceUrl: true });
+    }));
   });
 
   describe('resetAllSubmissionObjects', () => {

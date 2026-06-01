@@ -1,0 +1,14 @@
+<ds-status-badge [object]="object" />
+@if (isMyDSpaceStatus) {
+  <ds-my-dspace-status-badge [context]="context" />
+}
+<div>
+  <ds-type-badge class="pe-1" [object]="object" />
+  @if (showAccessStatus) {
+    <ds-access-status-badge class="pe-1" [object]="object" />
+  }
+  @if (object.hasMetadata(['dc.publisher.program'])) {
+    <ds-program-level-badge class="pe-1" [object]="object" />
+    <ds-program-badge class="pe-1" [object]="object" />
+  }
+</div>

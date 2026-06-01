@@ -214,6 +214,11 @@ export class DsDynamicLookupRelationModalComponent implements OnInit, OnDestroy 
    */
   isPending = false;
 
+  /**
+   * Route active when the modal was opened.
+   */
+  private initialRouterUrl: string;
+
   constructor(
     public modal: NgbActiveModal,
     private selectableListService: SelectableListService,
@@ -226,7 +231,7 @@ export class DsDynamicLookupRelationModalComponent implements OnInit, OnDestroy 
     private store: Store<AppState>,
     private router: Router,
   ) {
-
+    this.initialRouterUrl = this.router.url;
   }
 
   ngOnInit(): void {
@@ -373,7 +378,9 @@ export class DsDynamicLookupRelationModalComponent implements OnInit, OnDestroy 
   }
 
   ngOnDestroy() {
-    this.router.navigate([], {});
+    if (this.router.url !== this.initialRouterUrl) {
+      void this.router.navigateByUrl(this.initialRouterUrl);
+    }
     Object.values(this.subMap).forEach((subscription) => subscription.unsubscribe());
   }
 

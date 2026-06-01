@@ -1,0 +1,67 @@
+@if (showBackButton$ | async) {
+  <ds-results-back-button [back]="back" />
+}
+<div class="d-flex flex-row">
+  <ds-item-page-title-field class="me-auto" [item]="object" />
+  <ds-dso-edit-menu />
+</div>
+<div class="row">
+  <div class="col-12 col-md-4">
+    <div class="d-flex">
+      <ds-generic-item-page-field [item]="object"
+        [fields]="['organization.name']"
+        [label]="'graduateprogram.page.name'" />
+    </div>
+    <ds-generic-item-page-field [item]="object"
+      [fields]="['organization.alternateName']"
+      [label]="'graduateprogram.page.alternateName'" />
+    @if (capesCode) {
+      <div class="item-page-field">
+        <h5>{{ 'graduateprogram.page.capes' | translate }}</h5>
+        <a [href]="capesUrl" target="_blank" rel="noopener noreferrer">
+          {{ capesCode }}
+          <i class="fas fa-external-link-alt ms-1" aria-hidden="true"></i>
+          <span class="visually-hidden">{{ 'graduateprogram.page.capes.link' | translate }}</span>
+        </a>
+      </div>
+    }
+    @if (programUrl) {
+      <div class="item-page-field mt-3">
+        <h5>{{ 'graduateprogram.page.url' | translate }}</h5>
+        <a [href]="programUrl" target="_blank" rel="noopener noreferrer">
+          {{ 'graduateprogram.page.url.link' | translate }}
+          <i class="fas fa-external-link-alt ms-1" aria-hidden="true"></i>
+        </a>
+      </div>
+    }
+  </div>
+
+  <div class="col-12 col-md-8">
+    <ds-related-items
+      [parentItem]="object"
+      [relationType]="'isOrgUnitOfGraduateProgram'"
+      [label]="'graduateprogram.page.campus' | translate">
+    </ds-related-items>
+    <ds-generic-item-page-field [item]="object"
+      [fields]="['organization.description', 'dc.description', 'dc.description.abstract', 'dc.description.resumo']"
+      [label]="'graduateprogram.page.description'" />
+
+    <div>
+      <a class="btn btn-outline-primary" [routerLink]="[itemPageRoute + '/full']" role="button" tabindex="0">
+        <i class="fas fa-info-circle"></i> {{"item.page.link.full" | translate}}
+      </a>
+    </div>
+  </div>
+
+  <div class="mt-5 w-100 px-0">
+    <ds-tabbed-related-entities-search
+      [item]="object"
+      [relationTypes]="[
+        {
+          label: 'isPublicationOfGraduateProgram',
+          filter: 'isGraduateProgramOfPublication',
+          configuration: 'RELATION.GraduateProgram.isPublicationOfGraduateProgram'
+        }
+      ]" />
+  </div>
+</div>

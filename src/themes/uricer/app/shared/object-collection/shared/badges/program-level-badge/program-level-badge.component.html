@@ -1,0 +1,18 @@
+@if (isGraduateProgramBadge) {
+  <span>
+    <span class="sr-only">{{ 'listelement.badge.dso-type' | translate }}</span>
+    <span class="badge program-level-badge program-level-badge--graduate">
+      {{ 'graduateprogram.listelement.badge' | translate }}
+    </span>
+    <span class="sr-only">, </span>
+  </span>
+}
+@if (isUndergraduateProgramBadge) {
+  <span>
+    <span class="sr-only">{{ 'listelement.badge.dso-type' | translate }}</span>
+    <span class="badge program-level-badge program-level-badge--undergraduate">
+      {{ 'undergraduateprogram.listelement.badge' | translate }}
+    </span>
+    <span class="sr-only">, </span>
+  </span>
+}

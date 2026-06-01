@@ -1,0 +1,53 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.hero-search-form {
+  // max-width: 800px;
+  margin: 0 auto;
+
+  .input-group {
+    transition:
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+
+    &:hover,
+    &:focus-within {
+      box-shadow: 0 0.6rem 0.2rem rgba(0, 0, 0, 0.175) !important;
+      transform: translateY(-2px);
+    }
+  }
+
+  input.form-control {
+    box-shadow: none !important;
+    font-size: 1.1rem;
+    border: 1px solid rgba(0, 0, 0, 0.175);
+
+    &::placeholder {
+      color: #adb5bd;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .btn-primary {
+    transition: all 0.2s;
+
+    &:hover {
+      filter: brightness(110%);
+    }
+  }
+
+  .scope-button {
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    &:hover {
+      background-color: #f8f9fa;
+      color: var(--bs-primary);
+    }
+  }
+}

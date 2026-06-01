@@ -1,0 +1,12 @@
+@if (object.firstMetadata(['dc.publisher.program']); as program) {
+  <span>
+    <span class="sr-only" [dsMetadata]="program"></span>
+    <span
+      class="badge program-badge"
+      [class.program-badge--graduate]="isGraduateProgramBadge"
+      [class.program-badge--undergraduate]="isUndergraduateProgramBadge"
+      [class.program-badge--default]="!isGraduateProgramBadge && !isUndergraduateProgramBadge"
+      [dsMetadata]="program"></span>
+    <span class="sr-only">, </span>
+  </span>
+}

@@ -1,0 +1,104 @@
+<div class="row">
+  @if (showThumbnails) {
+    <div class="col-3 col-md-2">
+      @if (linkType !== linkTypes.None) {
+        <a [target]="(linkType === linkTypes.ExternalLink) ? '_blank' : '_self'" [attr.rel]="(linkType === linkTypes.ExternalLink) ? 'noopener noreferrer' : null"
+          [routerLink]="[itemPageRoute]" class="dont-break-out" [ngClass]="thumbnailClass" tabindex="-1">
+          <ds-thumbnail
+            [thumbnail]="dso?.thumbnail | async"
+            [placeholder]="thumbnailPlaceholder"
+            [limitWidth]="true" />
+        </a>
+      }
+      @if (linkType === linkTypes.None) {
+        <span class="dont-break-out" [ngClass]="thumbnailClass">
+          <ds-thumbnail
+            [thumbnail]="dso?.thumbnail | async"
+            [placeholder]="thumbnailPlaceholder"
+            [limitWidth]="true" />
+        </span>
+      }
+    </div>
+  }
+  <div [ngClass]="showThumbnails ? 'col-9 col-md-10' : 'col-md-12'">
+    <div class="d-flex">
+      @if (showLabel) {
+        <ds-badges [object]="dso" [context]="context" [showAccessStatus]="false" />
+      }
+    </div>
+
+    @if (object !== undefined && object !== null) {
+      <ds-truncatable [id]="dso.id">
+        @if (linkType !== linkTypes.None) {
+          <a [target]="(linkType === linkTypes.ExternalLink) ? '_blank' : '_self'" [attr.rel]="(linkType === linkTypes.ExternalLink) ? 'noopener noreferrer' : null"
+            [routerLink]="[itemPageRoute]" class="lead item-list-title dont-break-out"
+            [dsMetadata]="dsoTitle" role="link" tabindex="0"></a>
+        }
+        @if (linkType === linkTypes.None) {
+          <span class="lead item-list-title dont-break-out"
+            [dsMetadata]="dsoTitle"></span>
+        }
+        <span class="text-muted">
+          <ds-truncatable-part [id]="dso.id" [minLines]="1">
+            @if (hasEntityListMetadata) {
+              @if (isGraduateProgram && capesCode) {
+                <span>CAPES: </span>
+                <a [href]="capesUrl" target="_blank" rel="noopener noreferrer">
+                  {{ capesCode }}
+                  <i class="fas fa-external-link-alt ms-1" aria-hidden="true"></i>
+                  <span class="visually-hidden">Abrir na Plataforma Sucupira</span>
+                </a>
+              } @else if (entityDetailMetadata; as detail) {
+                <span [dsMetadata]="detail"></span>
+              }
+            } @else if (dso.hasMetadata(['dc.publisher.initials', 'dc.date.issued'])) {
+              (@if (firstMetadataValue('dc.publisher.initials') || firstMetadataValue('dc.date.issued')) {
+                @if (firstMetadataValue('dc.publisher.initials')) {
+                  <span class="item-list-publisher" [dsMetadata]="firstMetadata('dc.publisher.initials')"></span>
+                  }
+                  @if (firstMetadataValue('dc.publisher') && firstMetadataValue('dc.date.issued')) {
+                    <span>, </span>
+                  }
+                  @if (firstMetadataValue('dc.date.issued')) {
+                    <span class="item-list-date" [dsMetadata]="firstMetadata('dc.date.issued')"></span>
+                  }
+              })
+            }
+            @if (dso.allMetadataValues(['dc.contributor.author', 'dc.creator', 'dc.contributor.advisor', 'dc.contributor.advisorco'], placeholderFilter).length > 0) {
+              <span class="item-list-authors">
+                @let collapsed = isCollapsed() | async;
+                <ng-container>
+                  @if (collapsed) {
+                    @for (author of dso.limitedMetadata(['dc.contributor.author', 'dc.creator', 'dc.contributor.advisor', 'dc.contributor.advisorco'], additionalMetadataLimit, placeholderFilter); track author.uuid; let last = $last) {
+                      <ds-metadata-link-view [metadata]="author" />
+                      @if (!last) {
+                        <span>; </span>
+                      }
+                    }
+                  }
+                  @if (!collapsed) {
+                    @for (author of dso.allMetadata(['dc.contributor.author', 'dc.creator', 'dc.contributor.advisor', 'dc.contributor.advisorco'], placeholderFilter); track author.uuid; let last = $last) {
+                      <span>
+                        <ds-metadata-link-view [metadata]="author" />
+                        @if (!last) {
+                        <span>; </span>
+                        }
+                      </span>
+                    }
+                  }
+                </ng-container>
+              </span>
+            }
+          </ds-truncatable-part>
+        </span>
+        <ds-truncatable-part [id]="dso.id" [minLines]="3" class="item-list-abstract">
+          @if (entityAbstractMetadata; as abstract) {
+            <span [dsMetadata]="abstract"></span>
+          } @else if (dso.firstMetadata(['dc.description.resumo', 'dc.description.abstract', 'dc.description']); as abstract) {
+            <span [dsMetadata]="abstract"></span>
+          }
+        </ds-truncatable-part>
+      </ds-truncatable>
+    }
+  </div>
+</div>

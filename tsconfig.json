@@ -22,8 +22,8 @@
     "pretty": true,
     "target": "ES2022",
     "typeRoots": [
-      "node_modules/@types",
-      "src/typings.d.ts"
+      "./node_modules/@types",
+      "./src/typings.d.ts"
     ],
     "lib": [
       "dom",
@@ -42,14 +42,16 @@
     "useDefineForClassFields": false,
     "useUnknownInCatchVariables": true,
     "paths": {
-      "@dspace/core/*": ["src/app/core/*"],
-      "@dspace/config/*": ["src/config/*"],
-      "@dspace/shared/utils/*": ["src/app/utils/*"],
+      "@/app/*": ["./src/app/*"],
+      "@/uricer/*": ["./src/themes/uricer/*"],
+      "@dspace/core/*": ["./src/app/core/*"],
+      "@dspace/config/*": ["./src/config/*"],
+      "@dspace/shared/utils/*": ["./src/app/utils/*"],
       "@ng-dynamic-forms/core": [
-        "node_modules/@4science_ng-dynamic-forms/core"
+        "./node_modules/@4science_ng-dynamic-forms/core"
       ],
       "@ng-dynamic-forms/ui-ng-bootstrap": [
-        "node_modules/@4science_ng-dynamic-forms/ui-ng-bootstrap"
+        "./node_modules/@4science_ng-dynamic-forms/ui-ng-bootstrap"
       ]
     }
   },

@@ -1,0 +1,82 @@
+.community-list-wrapper {
+  background-color: #ffffff;
+}
+
+.text-truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.community-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  overflow: hidden;
+  position: relative;
+
+  // Optional: Top border accent
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      var(--uri) 0%,
+      #23afda 100%
+    ); // Brand gradient
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .icon-wrapper {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  .transition-icon {
+    transform: translateX(-5px);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 2px 0.5rem rgba(0, 0, 0, 0.1) !important;
+
+    &::before {
+      opacity: 1;
+    }
+
+    .icon-wrapper {
+      background-color: rgba(4, 121, 156, 0.1) !important; // Light brand teal
+      color: #04799c !important;
+    }
+
+    .transition-icon {
+      transform: translateX(0);
+    }
+
+    .bottom-info {
+      color: #04799c !important;
+    }
+  }
+}

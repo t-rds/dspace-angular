@@ -118,7 +118,17 @@ export class ExistingMetadataListElementComponent implements OnInit, OnChanges, 
     this.submissionService.getSubmissionObject(this.submissionId).pipe(
       filter((state: SubmissionObjectEntry) => !state.savePending && !state.isLoading),
       take(1)).subscribe(() => {
-      this.selectableListService.deselectSingle(this.listId, Object.assign(new ItemSearchResult(), { indexableObject: this.relatedItem }));
+      this.selectableListService.findSelectedByCondition(
+        this.listId,
+        (object) => {
+          const searchResult = object as ItemSearchResult;
+          return hasValue(searchResult.indexableObject) && searchResult.indexableObject.uuid === this.relatedItem.uuid;
+        },
+      ).pipe(take(1)).subscribe((selected) => {
+        if (hasValue(selected)) {
+          this.selectableListService.deselectSingle(this.listId, selected);
+        }
+      });
       this.store.dispatch(new RemoveRelationshipAction(this.submissionItem, this.relatedItem, this.relationshipOptions.relationshipType, this.submissionId));
       this.remove.emit();
     });
@@ -134,4 +144,3 @@ export class ExistingMetadataListElementComponent implements OnInit, OnChanges, 
   }
 
 }
-

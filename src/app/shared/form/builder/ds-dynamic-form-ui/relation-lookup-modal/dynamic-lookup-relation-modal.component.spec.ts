@@ -9,7 +9,10 @@ import {
   waitForAsync,
 } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { provideRouter } from '@angular/router';
+import {
+  provideRouter,
+  Router,
+} from '@angular/router';
 import { APP_CONFIG } from '@dspace/config/app-config.interface';
 import { RemoteDataBuildService } from '@dspace/core/cache/builders/remote-data-build.service';
 import { ExternalSourceDataService } from '@dspace/core/data/external-source-data.service';
@@ -51,6 +54,7 @@ describe('DsDynamicLookupRelationModalComponent', () => {
   let component: DsDynamicLookupRelationModalComponent;
   let fixture: ComponentFixture<DsDynamicLookupRelationModalComponent>;
   let debugElement: DebugElement;
+  let router: Router;
   let item;
   let item1;
   let item2;
@@ -163,6 +167,7 @@ describe('DsDynamicLookupRelationModalComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DsDynamicLookupRelationModalComponent);
+    router = TestBed.inject(Router);
     debugElement = fixture.debugElement;
     component = fixture.componentInstance;
     component.listId = listID;
@@ -189,6 +194,26 @@ describe('DsDynamicLookupRelationModalComponent', () => {
     it('should call close on the modal', () => {
       component.close();
       expect(component.modal.close).toHaveBeenCalled();
+    });
+  });
+
+  describe('ngOnDestroy', () => {
+    it('should not navigate when the route did not change', () => {
+      spyOn(router, 'navigateByUrl');
+
+      component.ngOnDestroy();
+
+      expect(router.navigateByUrl).not.toHaveBeenCalled();
+    });
+
+    it('should restore the initial route when the route changed', () => {
+      (component as any).initialRouterUrl = '/edit-items/test-id';
+      spyOnProperty(router, 'url', 'get').and.returnValue('/edit-items/test-id?query=test');
+      spyOn(router, 'navigateByUrl');
+
+      component.ngOnDestroy();
+
+      expect(router.navigateByUrl).toHaveBeenCalledWith('/edit-items/test-id');
     });
   });
 

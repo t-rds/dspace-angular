@@ -1,0 +1,63 @@
+// Add any global css for the theme here
+
+// imports the base global style
+@import '../../../styles/_global-styles.scss';
+
+.facet-filter, .setting-option, .advanced-search {
+  background-color: var(--bs-light);
+  border-radius: var(--bs-border-radius);
+
+  &.p-3 {
+    // Needs !important because the original bootstrap class uses it
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  .bg-secondary {
+    background-color: var(--bs-primary);
+  }
+
+  h4, .h4 {
+    font-size: 1.1rem;
+  }
+}
+
+.orejime-AppContainer .orejime-Notice {
+  max-width: 400px;
+}
+
+.orejime-AppContainer .orejime-Notice-actionItem {
+  &.orejime-Notice-actionItem--save > button {
+    color: var(--button-text-color-cookie);
+    background-color: var(--uri);
+  }
+  &.orejime-Notice-actionItem--decline > button {
+    color: var(--button-text-color-cookie);
+    background-color: #{$danger};
+  }
+  &.orejime-Notice-actionItem--info > button {
+    color: var(--button-text-color-cookie);
+    background-color: #{darken($success, 20%)};
+  }
+}
+
+.orejime-ModalPortal {
+  .orejime-Button.orejime-AppToggles-enableAll,
+  .orejime-Modal-saveButton {
+    color: var(--button-text-color-cookie);
+    background-color: var(--uri);
+  }
+
+  .orejime-Button.orejime-AppToggles-disableAll {
+    color: var(--button-text-color-cookie);
+    background-color: #{$danger};
+  }
+
+  .orejime-Modal-closeButton svg {
+    cursor: pointer;
+  }
+
+  a {
+    color: var(--bs-white);
+  }
+}

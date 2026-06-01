@@ -55,7 +55,23 @@ export class DSONameService {
       }
     },
     OrgUnit: (dso: DSpaceObject, escapeHTML?: boolean): string => {
-      return dso.firstMetadataValue('organization.legalName', undefined, escapeHTML);
+      return dso.firstMetadataValue(['organization.acronym', 'organization.legalName'], undefined, escapeHTML);
+    },
+    GraduateProgram: (dso: DSpaceObject, escapeHTML?: boolean): string => {
+      return dso.firstMetadataValue([
+        'organization.name',
+        'organization.legalName',
+        'organization.alternateName',
+        'dc.title',
+      ], undefined, escapeHTML);
+    },
+    UndergraduateProgram: (dso: DSpaceObject, escapeHTML?: boolean): string => {
+      return dso.firstMetadataValue([
+        'organization.name',
+        'organization.legalName',
+        'organization.alternateName',
+        'dc.title',
+      ], undefined, escapeHTML);
     },
     Default: (dso: DSpaceObject, escapeHTML?: boolean): string => {
       // If object doesn't have dc.title metadata use name property
@@ -65,7 +81,23 @@ export class DSONameService {
 
   private readonly languageFactories = {
     OrgUnit: (dso: DSpaceObject): string => {
-      return dso.firstMetadata('organization.legalName')?.language;
+      return dso.firstMetadata(['organization.acronym', 'organization.legalName'])?.language;
+    },
+    GraduateProgram: (dso: DSpaceObject): string => {
+      return dso.firstMetadata([
+        'organization.name',
+        'organization.legalName',
+        'organization.alternateName',
+        'dc.title',
+      ])?.language;
+    },
+    UndergraduateProgram: (dso: DSpaceObject): string => {
+      return dso.firstMetadata([
+        'organization.name',
+        'organization.legalName',
+        'organization.alternateName',
+        'dc.title',
+      ])?.language;
     },
     Default: (dso: DSpaceObject): string => {
       return dso.firstMetadata('dc.title')?.language;
@@ -140,7 +172,7 @@ export class DSONameService {
     const types = dso.getRenderTypes();
     const entityType = types
       .filter((type) => typeof type === 'string')
-      .find((type: string) => (['Person', 'OrgUnit']).includes(type)) as string;
+      .find((type: string) => (['Person', 'OrgUnit', 'GraduateProgram', 'UndergraduateProgram']).includes(type)) as string;
     if (entityType === 'Person') {
       const familyName = this.firstMetadata(object, dso, 'person.familyName', escapeHTML);
       const givenName = this.firstMetadata(object, dso, 'person.givenName', escapeHTML);
@@ -153,8 +185,17 @@ export class DSONameService {
       }
       return Object.assign(new MetadataValue(), { value: `${familyName.value}, ${givenName.value}` });
     } else if (entityType === 'OrgUnit') {
-      return this.firstMetadata(object, dso, 'organization.legalName', escapeHTML) ||
+      return this.firstMetadata(object, dso, ['organization.acronym', 'organization.legalName'], escapeHTML) ||
         Object.assign(new MetadataValue(), { value: this.translateService.instant('orgunit.listelement.no-title') });
+    } else if (entityType === 'GraduateProgram' || entityType === 'UndergraduateProgram') {
+      return this.firstMetadata(object, dso, [
+        'organization.name',
+        'organization.legalName',
+        'organization.alternateName',
+        'dc.title',
+      ], escapeHTML) ||
+        (dso.name && Object.assign(new MetadataValue(), { value: dso.name })) ||
+        Object.assign(new MetadataValue(), { value: this.translateService.instant('dso.name.untitled') });
     }
     return this.firstMetadata(object, dso, 'dc.title', escapeHTML) ||
       (dso.name && Object.assign(new MetadataValue(), { value: dso.name })) ||

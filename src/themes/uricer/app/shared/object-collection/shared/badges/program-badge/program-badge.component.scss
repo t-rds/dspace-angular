@@ -1,0 +1,15 @@
+.program-badge {
+  color: var(--bs-white);
+}
+
+.program-badge--default {
+  background-color: var(--uri);
+}
+
+.program-badge--graduate {
+  background-color: var(--badge-primary);
+}
+
+.program-badge--undergraduate {
+  background-color: var(--badge-primary);
+}

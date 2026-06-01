@@ -53,7 +53,7 @@ describe('ExistingMetadataListElementComponent', () => {
   function init() {
     uuid1 = '91ce578d-2e63-4093-8c73-3faafd716000';
     uuid2 = '0e9dba1c-e1c3-4e05-a539-446f08ef57a7';
-    selectionService = jasmine.createSpyObj('selectionService', ['deselectSingle']);
+    selectionService = jasmine.createSpyObj('selectionService', ['deselectSingle', 'findSelectedByCondition']);
     store = jasmine.createSpyObj('store', ['dispatch']);
     listID = '1234-listID';
     submissionItem = Object.assign(new Item(), { uuid: uuid1 });
@@ -71,6 +71,7 @@ describe('ExistingMetadataListElementComponent', () => {
     relationshipService = {
       updatePlace: () => of({}),
     } as any;
+    selectionService.findSelectedByCondition.and.returnValue(of(relatedSearchResult));
 
     relationship = Object.assign(new Relationship(), { leftItem: leftItemRD$, rightItem: rightItemRD$ });
     submissionId = '1234';

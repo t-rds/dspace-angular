@@ -696,9 +696,10 @@ export class SubmissionService {
           getFirstCompletedRemoteData(),
           getRemoteDataPayload(),
           getPaginatedListPayload(),
-          switchMap(bundles => combineLatest([
-            ...bundles.map((bundle: Bundle) => this.requestService.setStaleByHrefSubstring(bundle._links.bitstreams.href)),
-          ])),
+          switchMap((bundles) => isNotEmpty(bundles)
+            ? combineLatest(bundles.map((bundle: Bundle) => this.requestService.setStaleByHrefSubstring(bundle._links.bitstreams.href)))
+            : of([]),
+          ),
         ),
       ])),
       take(1),

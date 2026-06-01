@@ -28,7 +28,10 @@ import {
   Observable,
   Subscription,
 } from 'rxjs';
-import { filter } from 'rxjs/operators';
+import {
+  filter,
+  take,
+} from 'rxjs/operators';
 
 import { AppState } from '../../../../../app.reducer';
 import { SubmissionService } from '../../../../../submission/submission.service';
@@ -132,8 +135,19 @@ export class ExistingRelationListElementComponent implements OnInit, OnChanges, 
    */
   removeSelection() {
     this.submissionService.dispatchSave(this.submissionId);
-    this.selectableListService.deselectSingle(this.listId, Object.assign(new ItemSearchResult(), { indexableObject: this.relatedItem$.getValue() }));
-    this.store.dispatch(new RemoveRelationshipAction(this.submissionItem, this.relatedItem$.getValue(), this.relationshipOptions.relationshipType, this.submissionId));
+    const relatedItem = this.relatedItem$.getValue();
+    this.selectableListService.findSelectedByCondition(
+      this.listId,
+      (object) => {
+        const searchResult = object as ItemSearchResult;
+        return hasValue(searchResult.indexableObject) && searchResult.indexableObject.uuid === relatedItem.uuid;
+      },
+    ).pipe(take(1)).subscribe((selected) => {
+      if (hasValue(selected)) {
+        this.selectableListService.deselectSingle(this.listId, selected);
+      }
+    });
+    this.store.dispatch(new RemoveRelationshipAction(this.submissionItem, relatedItem, this.relationshipOptions.relationshipType, this.submissionId));
   }
 
   /**
@@ -146,4 +160,3 @@ export class ExistingRelationListElementComponent implements OnInit, OnChanges, 
   }
 
 }
-

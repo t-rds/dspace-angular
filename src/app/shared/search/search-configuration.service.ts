@@ -315,6 +315,20 @@ export class SearchConfigurationService implements OnDestroy {
   }
 
   /**
+   * Update the current search options without syncing them to the route.
+   */
+  updateLocalSearchOptions(update: any, paginationUpdate?: Partial<PaginationComponentOptions>): void {
+    const currentValue: PaginatedSearchOptions = this.paginatedSearchOptions.getValue();
+    const pagination = Object.assign(new PaginationComponentOptions(), currentValue.pagination, paginationUpdate);
+    const updatedValue = new PaginatedSearchOptions(Object.assign({}, currentValue, update, {
+      pagination,
+    }));
+
+    this.searchOptions.next(updatedValue);
+    this.paginatedSearchOptions.next(updatedValue);
+  }
+
+  /**
    * Make sure to unsubscribe from all existing subscription to prevent memory leaks
    */
   ngOnDestroy(): void {

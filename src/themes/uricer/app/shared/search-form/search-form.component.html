@@ -1,0 +1,40 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form.value)" action="/search" class="hero-search-form" role="search">
+  <div class="input-group input-group-lg shadow-sm rounded-pill overflow-hidden bg-white mb-3 border border-1">
+    @if (showScopeSelector) {
+      <button
+        class="btn btn-light dropdown-toggle border-0 ps-4 pe-3 text-muted"
+        type="button"
+        (click)="openScopeModal()"
+        [ngbTooltip]="dsoNameService.getName(selectedScope | async)"
+      >
+        {{
+          dsoNameService.getName(selectedScope | async) ||
+            ("search.form.scope.all" | translate)
+        }}
+      </button>
+    }
+
+    <div class="input-group-text bg-transparent border-0 ps-4">
+      <i class="fas fa-search text-muted"></i>
+    </div>
+
+    <input
+      type="text"
+      [(ngModel)]="query"
+      name="query"
+      class="form-control border-0 ps-2"
+      [attr.aria-label]="searchPlaceholder"
+      [attr.data-test]="'search-box' | dsBrowserOnly"
+      [placeholder]="searchPlaceholder"
+      tabindex="0"
+    />
+
+    <button
+      type="submit"
+      class="btn btn-primary px-4 fw-bold"
+      [attr.data-test]="'search-button' | dsBrowserOnly"
+    >
+      {{ "search.form.search" | translate }}
+    </button>
+  </div>
+</form>
