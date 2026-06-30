@@ -5,8 +5,6 @@ import {
   inject,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { PaginationComponentOptions } from '@dspace/core/pagination/pagination-component-options.model';
-import { PaginatedSearchOptions } from '@dspace/core/shared/search/models/paginated-search-options.model';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -34,16 +32,9 @@ export class SearchFormComponent extends BaseComponent {
       return;
     }
 
-    const currentValue = this.searchConfig.paginatedSearchOptions.getValue();
-    const pagination = Object.assign(new PaginationComponentOptions(), currentValue.pagination, {
+    this.searchConfig.updateLocalSearchOptions(data, {
       currentPage: 1,
     });
-    const updatedValue = new PaginatedSearchOptions(Object.assign({}, currentValue, data, {
-      pagination,
-    }));
-
-    this.searchConfig.searchOptions.next(updatedValue);
-    this.searchConfig.paginatedSearchOptions.next(updatedValue);
   }
 
   private isRelationshipLookupSearch(): boolean {

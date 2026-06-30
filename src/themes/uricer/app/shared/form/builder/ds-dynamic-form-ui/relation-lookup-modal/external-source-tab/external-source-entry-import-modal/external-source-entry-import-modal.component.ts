@@ -8,8 +8,7 @@ import { ThemedSearchResultsComponent } from '@/app/shared/search/search-results
 
 @Component({
   selector: 'ds-themed-external-source-entry-import-modal',
-  styleUrls: ['../../../../../../../../../../app/shared/form/builder/ds-dynamic-form-ui/relation-lookup-modal/external-source-tab/external-source-entry-import-modal/external-source-entry-import-modal.component.scss'],
-  // styleUrls: ['./external-source-entry-import-modal.component.scss'],
+  styleUrls: ['./external-source-entry-import-modal.component.scss'],
   templateUrl: '../../../../../../../../../../app/shared/form/builder/ds-dynamic-form-ui/relation-lookup-modal/external-source-tab/external-source-entry-import-modal/external-source-entry-import-modal.component.html',
   imports: [
     AsyncPipe,

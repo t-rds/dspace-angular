@@ -26,6 +26,8 @@ export class ThumbnailComponent extends BaseComponent {
     'thumbnail.entity.person.placeholder': 'fa-solid fa-people-group',
     'thumbnail.entity.org-unit.placeholder': 'fa-solid fa-building',
     'thumbnail.entity.program.placeholder': 'fa-solid fa-graduation-cap',
+    'thumbnail.person.placeholder': 'fa-solid fa-people-group',
+    'thumbnail.orgunit.placeholder': 'fa-solid fa-building',
   };
 
   get placeholderIconClass(): string | null {

@@ -1,6 +1,8 @@
 import { JournalComponent } from './app/entity-groups/journal-entities/item-pages/journal/journal.component';
 import { JournalIssueComponent } from './app/entity-groups/journal-entities/item-pages/journal-issue/journal-issue.component';
 import { JournalVolumeComponent } from './app/entity-groups/journal-entities/item-pages/journal-volume/journal-volume.component';
+import { OrgUnitListElementComponent } from './app/entity-groups/research-entities/item-list-elements/org-unit/org-unit-list-element.component';
+import { OrgUnitSearchResultListElementComponent } from './app/entity-groups/research-entities/item-list-elements/search-result-list-elements/org-unit/org-unit-search-result-list-element.component';
 import { GraduateProgramComponent } from './app/entity-groups/research-entities/item-pages/graduate-program/graduate-program.component';
 import { PersonComponent } from './app/entity-groups/research-entities/item-pages/person/person.component';
 import { OrgUnitComponent } from './app/entity-groups/research-entities/item-pages/org-unit/org-unit.component';
@@ -22,6 +24,8 @@ export const LISTABLE_COMPONENTS = [
   JournalComponent,
   JournalIssueComponent,
   JournalVolumeComponent,
+  OrgUnitListElementComponent,
+  OrgUnitSearchResultListElementComponent,
   OrgUnitComponent,
   PersonComponent,
   PublicationComponent,

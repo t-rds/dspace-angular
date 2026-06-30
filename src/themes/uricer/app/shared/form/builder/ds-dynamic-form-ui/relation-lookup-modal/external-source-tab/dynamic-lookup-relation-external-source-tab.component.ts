@@ -3,8 +3,6 @@ import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { SEARCH_CONFIG_SERVICE } from '@/app/my-dspace-page/my-dspace-configuration.service';
-import { PaginationComponentOptions } from '@dspace/core/pagination/pagination-component-options.model';
-import { PaginatedSearchOptions } from '@dspace/core/shared/search/models/paginated-search-options.model';
 import {
   fadeIn,
   fadeInOut,
@@ -27,6 +25,10 @@ import { VarDirective } from '@/app/shared/utils/var.directive';
       provide: SEARCH_CONFIG_SERVICE,
       useClass: SearchConfigurationService,
     },
+    {
+      provide: SearchConfigurationService,
+      useExisting: SEARCH_CONFIG_SERVICE,
+    },
   ],
   animations: [
     fadeIn,
@@ -45,16 +47,9 @@ import { VarDirective } from '@/app/shared/utils/var.directive';
 })
 export class DsDynamicLookupRelationExternalSourceTabComponent extends BaseComponent {
   override resetRoute() {
-    const currentValue = this.searchConfigService.paginatedSearchOptions.getValue();
-    const pagination = Object.assign(new PaginationComponentOptions(), currentValue.pagination, {
-      currentPage: 1,
+    this.searchConfigService.updateLocalSearchOptions({}, {
+      currentPage: this.initialPagination.currentPage ?? 1,
       pageSize: 5,
     });
-    const updatedValue = new PaginatedSearchOptions(Object.assign({}, currentValue, {
-      pagination,
-    }));
-
-    this.searchConfigService.searchOptions.next(updatedValue);
-    this.searchConfigService.paginatedSearchOptions.next(updatedValue);
   }
 }
