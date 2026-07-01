@@ -2,7 +2,7 @@
   <ds-results-back-button [back]="back" />
 }
 <div class="d-flex flex-row">
-  <ds-item-page-title-field class="me-auto" [item]="object" />
+  <ds-item-page-title-field class="me-auto mb-2" [item]="object" />
   <ds-dso-edit-menu />
 </div>
 <div class="row">
@@ -43,7 +43,7 @@
     </ds-related-items>
     <div>
       <a class="btn btn-outline-primary" [routerLink]="[itemPageRoute + '/full']" role="button" tabindex="0">
-        {{"item.page.link.full" | translate}}
+        {{ "item.page.link.full" | translate }}
       </a>
     </div>
   </div>
