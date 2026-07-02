@@ -19,7 +19,11 @@
           <tr
             class="{{point.id}}-data">
             <th scope="row" data-test="statistics-label">
-              {{ point.label }}
+              @if (pointLabels$[point.id] | async; as pointLabel) {
+                {{ pointLabel }}
+              } @else {
+                {{ 'statistics.table.no-name' | translate }}
+              }
             </th>
             @for (header of headers; track header) {
               <td
