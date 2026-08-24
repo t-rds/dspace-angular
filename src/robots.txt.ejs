@@ -22,9 +22,18 @@ Disallow: /entities/*?f
 Disallow: /collections/*?f
 Disallow: /communities/*?spc.page
 
+# Bloqueia qualquer busca com parâmetros de query (filtro, ordenação, paginação agressiva)
+Disallow: /*?*sort_by=
+Disallow: /*?*order=
+Disallow: /*?*rpp=
+Disallow: /*?*page=
+
 # Optionally uncomment the following line ONLY if sitemaps are working
 # and you have verified that your site is being indexed correctly.
 # Disallow: /browse/*
+
+# Bloqueia renderização SSR de visualizações de bitstreams/downloads direto pela UI do Angular
+Disallow: /bitstreams/*
 
 # If you have configured DSpace (Solr-based) Statistics to be publicly
 # accessible, then you may not want this content to be indexed
